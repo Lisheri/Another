@@ -2,3 +2,4 @@ _book
 node_modules
 demo.js
 beifen
+.DS_Store
