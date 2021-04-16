@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>函数编程范式 · GitBook</title>
+        <title>函数式编程起始 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,8 +61,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="2.html" />
     
-    <link rel="prev" href="../" />
     
 
     </head>
@@ -104,16 +104,119 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="1.html">
+        <li class="chapter " data-level="1.2" >
             
-                <a href="1.html">
+                <span>
             
                     
                     函数编程范式
             
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="1.html">
+            
+                <a href="1.html">
+            
+                    
+                    函数式编程起始
+            
                 </a>
             
 
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="2.html">
+            
+                <a href="2.html">
+            
+                    
+                    纯函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="3.html">
+            
+                <a href="3.html">
+            
+                    
+                    函数组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="4.html">
+            
+                <a href="4.html">
+            
+                    
+                    函子
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    JS异步编程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../part2/1.html">
+            
+                <a href="../part2/1.html">
+            
+                    
+                    JS异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../part2/2.html">
+            
+                <a href="../part2/2.html">
+            
+                    
+                    手写Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -147,7 +250,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >函数编程范式</a>
+        <a href=".." >函数式编程起始</a>
     </h1>
 </div>
 
@@ -163,6 +266,207 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x51FD;&#x6570;&#x7F16;&#x7A0B;&#x8303;&#x5F0F;">&#x51FD;&#x6570;&#x7F16;&#x7A0B;&#x8303;&#x5F0F;</h1>
+<h2 id="&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5B66;&#x4E60;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#xFF1F;">&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5B66;&#x4E60;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#xFF1F;</h2>
+<ul>
+<li>&#x968F;&#x7740;React&#x8D8A;&#x6765;&#x8D8A;&#x6D41;&#x884C;&#xFF0C;React&#x4E2D;&#x7684;HOC&#xFF0C;&#x662F;&#x4E00;&#x79CD;FP&#xFF0C;React&#x7684;Reducer&#x662F;&#x4E00;&#x4E2A;&#x7EAF;&#x51FD;&#x6570;&#xFF0C;&#x5C31;&#x662F;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x7684;&#x601D;&#x60F3;&#xFF0C;&#x540C;&#x65F6;16.8&#x4EE5;&#x540E;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x51FD;&#x6570;&#x5F0F;&#x7EC4;&#x4EF6;(&#x4F7F;&#x7528;Hooks)</li>
+<li>Vue3&#x5F00;&#x59CB;&#x8D8B;&#x5411;&#x4E8E;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#xFF0C;&#x6BD4;&#x5982;composition API</li>
+<li>this&#x4F1A;&#x6709;&#x4E00;&#x4E9B;&#x6B67;&#x4E49;(&#x6BD4;&#x5982;&#x8BF4;&#x666E;&#x901A;&#x51FD;&#x6570;&#x7684;this&#x662F;&#x5728;&#x8C03;&#x7528;&#x7684;&#x65F6;&#x5019;&#x51B3;&#x5B9A;&#x7684;&#xFF0C;&#x666E;&#x901A;&#x51FD;&#x6570;&#x95ED;&#x5305;&#x4E2D;&#x7684;&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x5185;&#x90E8;this&#x7EE7;&#x627F;&#x81EA;&#x5916;&#x5C42;&#x666E;&#x901A;&#x51FD;&#x6570;, &#x5982;&#x679C;&#x8BF4;&#x4F7F;&#x7528;call/apply/bind&#x53BB;&#x4FEE;&#x6539;&#x5916;&#x5C42;&#x666E;&#x901A;&#x51FD;&#x6570;&#x7684;this, &#x7BAD;&#x5934;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x7684;this&#x6307;&#x5411;&#x662F;&#x4F1A;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x7684;&#x3002;)&#xFF0C;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x53EF;&#x4EE5;&#x629B;&#x5F03;this</li>
+<li>&#x6253;&#x5305;&#x8FC7;&#x7A0B;&#x4E2D;&#x66F4;&#x597D;&#x7684;&#x5229;&#x7528; tree shaking&#x8FC7;&#x6EE4;&#x65E0;&#x7528;&#x4EE3;&#x7801;</li>
+<li>&#x65B9;&#x4FBF;&#x6D4B;&#x8BD5;&#xFF0C;&#x65B9;&#x4FBF;&#x5E76;&#x884C;&#x5904;&#x7406;</li>
+<li>&#x51FD;&#x6570;&#x5F0F;&#x5F00;&#x53D1;&#x5E93;&#x591A;: lodash&#x3001;underscore&#x3001;ramda</li>
+</ul>
+<h2 id="&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;">&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</h2>
+<p>&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;(Functional Programming  FP)</p>
+<p>&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x662F;&#x4E00;&#x79CD;&#x7F16;&#x7A0B;&#x98CE;&#x683C;, &#x662F;&#x7F16;&#x7A0B;&#x8303;&#x5F0F;&#x4E4B;&#x4E00;&#xFF0C;&#x548C;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x3001;&#x9762;&#x5411;&#x8FC7;&#x7A0B;&#x4E00;&#x6837;&#xFF0C;&#x5C5E;&#x4E8E;&#x4E00;&#x79CD;&#x7F16;&#x7A0B;&#x8303;&#x5F0F;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x8BF4;&#x662F;&#x4E00;&#x79CD;&#x601D;&#x7EF4;&#x6A21;&#x5F0F;&#x3002;</p>
+<ul>
+<li><p>&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x601D;&#x7EF4;&#x65B9;&#x5F0F;: &#x628A;&#x73B0;&#x5B9E;&#x4E16;&#x754C;&#x4E2D;&#x7684;&#x4E8B;&#x7269;&#x62BD;&#x8C61;&#x4E3A;&#x7A0B;&#x5E8F;&#x4E16;&#x754C;&#x4E2D;&#x7684;&#x7C7B;&#x548C;&#x5BF9;&#x8C61;&#xFF0C;&#x901A;&#x8FC7;&#x5C01;&#x88C5;&#x3001;&#x7EE7;&#x627F;&#x548C;&#x591A;&#x6001;&#x6765;&#x6F14;&#x793A;&#x4E8B;&#x7269;&#x95F4;&#x7684;&#x8054;&#x7CFB;&#x3002;(&#x7B80;&#x5355;&#x7684;&#x8BF4;&#x5C31;&#x662F;&#x628A;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x7684;&#x4E1C;&#x897F;&#x5C01;&#x88C5;&#x6210;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x628A;&#x8FD9;&#x4E2A;&#x4E1C;&#x897F;&#x7684;&#x4E00;&#x7CFB;&#x5217;&#x64CD;&#x4F5C;&#x5C01;&#x88C5;&#x6210;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x548C;&#x8FD9;&#x4E2A;&#x4E1C;&#x897F;&#x7C7B;&#x4F3C;&#x7684;&#x90FD;&#x53EF;&#x4EE5;&#x7EE7;&#x627F;&#x4ED6;&#xFF0C;&#x4F5C;&#x4E3A;&#x4ED6;&#x7684;&#x6D3E;&#x751F;&#x7C7B;&#x3002;&#x6BD4;&#x5982;&#x8BF4;<code>&#x8F66;</code>&#x662F;&#x4E00;&#x4E2A;&#x7236;&#x7C7B;&#xFF0C; <code>&#x52A0;&#x6CB9;</code>&#x662F;&#x4ED6;&#x7684;&#x65B9;&#x6CD5;, <code>&#x8B66;&#x8F66;</code>&#x662F;&#x4E00;&#x4E2A;&#x6D3E;&#x751F;&#x7C7B;)</p>
+</li>
+<li><p>&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x7684;&#x601D;&#x7EF4;&#x65B9;&#x5F0F;: &#x628A;&#x73B0;&#x5B9E;&#x4E16;&#x754C;&#x7684;&#x4E8B;&#x7269;&#x548C;&#x4E8B;&#x7269;&#x4E4B;&#x95F4;&#x7684;&#x8054;&#x7CFB;&#x62BD;&#x8C61;&#x5230;&#x7A0B;&#x5E8F;&#x4E16;&#x754C;(&#x5BF9;&#x8FD0;&#x7B97;&#x8FC7;&#x7A0B;&#x8FDB;&#x884C;&#x62BD;&#x8C61;)&#x3002;</p>
+<ul>
+<li>&#x7A0B;&#x5E8F;&#x5C31;&#x662F;&#x8F93;&#x5165;&#x4E00;&#x5B9A;&#x7684;&#x503C;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD0;&#x7B97;&#x5F97;&#x5230;&#x76F8;&#x5E94;&#x7684;&#x8F93;&#x51FA;&#x503C;&#x3002;(&#x51FD;&#x6570;&#x8F93;&#x5165;&#x4E00;&#x5B9A;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8F93;&#x51FA;&#x4E5F;&#x662F;&#x4E00;&#x5B9A;&#x7684;)</li>
+<li>&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x4E2D;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x4E0D;&#x662F;&#x6307;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x662F;&#x4E00;&#x79CD;&#x6620;&#x5C04;&#x5173;&#x7CFB;</li>
+<li>&#x8F93;&#x5165;&#x4E00;&#x5B9A;&#xFF0C;&#x8F93;&#x51FA;&#x4E5F;&#x4E00;&#x5B9A;(&#x7EAF;&#x51FD;&#x6570;)</li>
+</ul>
+</li>
+</ul>
+<p>&#x603B;&#xFF1A; &#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x5C31;&#x662F;&#x7528;&#x4E8E;&#x63CF;&#x8FF0;&#x6570;&#x636E;&#x4E4B;&#x95F4;&#x7684;&#x6620;&#x5C04;&#x5173;&#x7CFB;</p>
+<pre><code class="lang-typeScript"><span class="hljs-comment">// * &#x9762;&#x5411;&#x8FC7;&#x7A0B;</span>
+<span class="hljs-keyword">const</span> num1: <span class="hljs-built_in">number</span> = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">const</span> num2: <span class="hljs-built_in">number</span> = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">const</span> sum: <span class="hljs-built_in">number</span> = num1 + num2;
+<span class="hljs-built_in">console</span>.info(sum);
+
+<span class="hljs-comment">// * &#x51FD;&#x6570;&#x5F0F;</span>
+<span class="hljs-comment">// * &#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x7684;&#x51FD;&#x6570;&#x4E00;&#x5B9A;&#x8981;&#x6709;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;</span>
+<span class="hljs-comment">// * &#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x91CD;&#x7528;, &#x51FD;&#x6570;&#x4E4B;&#x95F4;&#x53EF;&#x4EE5;&#x7EC4;&#x5408;&#x6210;&#x529F;&#x80FD;&#x66F4;&#x5F3A;&#x5927;&#x7684;&#x51FD;&#x6570;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x: <span class="hljs-built_in">number</span>, y: <span class="hljs-built_in">number</span></span>): <span class="hljs-title">number</span> </span>{
+    <span class="hljs-keyword">return</span> x + y; <span class="hljs-comment">// * &#x8FD9;&#x5C31;&#x662F;&#x8FD0;&#x7B97;&#x8FC7;&#x7A0B;&#x7684;&#x62BD;&#x8C61;</span>
+}
+<span class="hljs-built_in">console</span>.info(add(num1, num2));
+</code></pre>
+<h2 id="&#x4E00;&#x7B49;&#x516C;&#x6C11;&#x7684;&#x51FD;&#x6570;first-class-function-&#x5934;&#x7B49;&#x51FD;&#x6570;">&#x4E00;&#x7B49;&#x516C;&#x6C11;&#x7684;&#x51FD;&#x6570;(First-class Function &#x5934;&#x7B49;&#x51FD;&#x6570;)</h2>
+<p>MDN&#x4E2D;&#x505A;&#x4E86;&#x5982;&#x4E0B;&#x4E09;&#x70B9;&#x89E3;&#x91CA;:</p>
+<ul>
+<li>&#x628A;&#x51FD;&#x6570;&#x8D4B;&#x503C;&#x7ED9;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;</li>
+<li>&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;</li>
+<li>&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x8FD4;&#x56DE;&#x503C;</li>
+</ul>
+<p>&#x5728;JS&#x4E2D;, &#x51FD;&#x6570;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x5BF9;&#x8C61;(Object), &#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>new Function()</code> &#x6784;&#x9020;&#x4E00;&#x4E2A;&#x51FD;&#x6570;, &#x7531;&#x4E8E;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x5728;&#x53D8;&#x91CF;/&#x6570;&#x7EC4;&#x4E2D;, &#x7531;&#x4E8E;&#x662F;&#x5BF9;&#x8C61;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;, &#x4E5F;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x8FD4;&#x56DE;&#x503C;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>new Function(`return ${stringCode}`)()</code>&#x6765;&#x6A21;&#x62DF;eval&#x6267;&#x884C;&#x5B57;&#x7B26;&#x4E32;&#x7684;js&#x811A;&#x672C;&#x3002;</p>
+<h2 id="&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53D8;&#x91CF;">&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53D8;&#x91CF;</h2>
+<p>&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-javaScript">
+<span class="hljs-comment">// &#x539F;&#x5BF9;&#x8C61;</span>
+<span class="hljs-keyword">const</span> oriController = {
+    index(ports) { <span class="hljs-keyword">return</span> Views.index(ports) },
+    show(port) { <span class="hljs-keyword">return</span> Views.show(port) }
+}
+
+<span class="hljs-comment">// &#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x53D8;&#x91CF;, &#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5C06;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x8D4B;&#x7ED9;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x6210;&#x5458;</span>
+<span class="hljs-comment">// &#x4F5C;&#x5982;&#x4E0B;&#x4F18;&#x5316;, &#x53EF;&#x4EE5;&#x7CBE;&#x7B80;&#x4EE3;&#x7801;</span>
+<span class="hljs-keyword">const</span> nowController = {
+    index: Views.index,
+    show: Views.show
+}
+</code></pre>
+<h2 id="&#x9AD8;&#x9636;&#x51FD;&#x6570;">&#x9AD8;&#x9636;&#x51FD;&#x6570;</h2>
+<p>&#x9AD8;&#x9636;&#x51FD;&#x6570;(Higher-order function):</p>
+<ul>
+<li>&#x53EF;&#x4EE5;&#x628A;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x7ED9;&#x4E00;&#x4E2A;&#x51FD;&#x6570;</li>
+<li>&#x53EF;&#x4EE5;&#x628A;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;</li>
+</ul>
+<h3 id="&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;">&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;</h3>
+<p>&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x4F20;&#x9012;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x53C2;&#x6570;&#xFF0C;&#x5C4F;&#x853D;&#x4E00;&#x4E9B;&#x7EC6;&#x8282;&#x4E0A;&#x7684;&#x4E1C;&#x897F;&#x3002;</p>
+<p>&#x5982;&#x4E0B;&#x7684;forEach&#x7B49;, &#x901A;&#x8FC7;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x7528;&#x4E8E;&#x5C4F;&#x853D;&#x904D;&#x5386;&#x65F6;&#x6216;&#x8005;&#x5224;&#x65AD;&#x65F6;&#x9700;&#x8981;&#x5904;&#x7406;&#x7684;&#x7EC6;&#x8282;</p>
+<pre><code class="lang-javaScript"><span class="hljs-comment">// forEach</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">forEach</span>(<span class="hljs-params">arr, fn</span>) </span>{
+    <span class="hljs-keyword">const</span> len = arr.length;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; len; i++) {
+        fn(arr[i], i);
+    }
+}
+
+<span class="hljs-comment">// filter</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">filter</span>(<span class="hljs-params">arr, fn</span>) </span>{
+    <span class="hljs-keyword">const</span> len = arr.length;
+    <span class="hljs-keyword">const</span> res = [];
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i&lt; len; i++) {
+        <span class="hljs-keyword">if</span> (fn(arr[i], i)) {
+            res.push(arr[i]);
+        }
+    }
+    <span class="hljs-keyword">return</span> res;
+}
+</code></pre>
+<h3 id="&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x8FD4;&#x56DE;&#x503C;">&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x8FD4;&#x56DE;&#x503C;</h3>
+<p>&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x8FD4;&#x56DE;&#x503C;&#x8FDB;&#x884C;&#x4F20;&#x9012;, &#x5F62;&#x6210;&#x4E00;&#x4E2A;&#x95ED;&#x5305;, &#x95ED;&#x5305;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x4E00;&#x4E9B;&#x53D8;&#x91CF;, &#x5982;&#x4E0B;once&#x65B9;&#x6CD5;</p>
+<pre><code class="lang-javaScript">
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">once</span>(<span class="hljs-params">fn</span>) </span>{
+    <span class="hljs-keyword">let</span> done = <span class="hljs-literal">false</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">if</span> (!done) {
+            done = <span class="hljs-literal">true</span>;
+            fn.apply(<span class="hljs-keyword">this</span>, <span class="hljs-built_in">Array</span>.prototype.slice.call(<span class="hljs-built_in">arguments</span>))
+        }
+    }
+}
+</code></pre>
+<h3 id="&#x624B;&#x5199;&#x5E38;&#x7528;&#x9AD8;&#x9636;&#x51FD;&#x6570;">&#x624B;&#x5199;&#x5E38;&#x7528;&#x9AD8;&#x9636;&#x51FD;&#x6570;</h3>
+<pre><code class="lang-javaScript"><span class="hljs-comment">// map</span>
+
+<span class="hljs-comment">// &#x7B80;&#x6613;&#x7248;</span>
+<span class="hljs-keyword">const</span> map = (arr, fn) =&gt; {
+    <span class="hljs-keyword">const</span> len = arr.length;
+    <span class="hljs-keyword">const</span> res = [];
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; len; i++) {
+        res.push(fn(arr[i], i));
+    }
+    <span class="hljs-keyword">return</span> res;
+}
+
+<span class="hljs-comment">// ecma262&#x8349;&#x6848;&#x7248;</span>
+<span class="hljs-built_in">Array</span>.prototype.map = (fn, context) =&gt; {
+    <span class="hljs-comment">// map&#x8FD8;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x7528;&#x4E8E;&#x6539;&#x53D8;&#x56DE;&#x8C03;&#x51FD;&#x6570;this&#x6307;&#x5411;</span>
+
+    <span class="hljs-comment">// &#x5904;&#x7406;&#x5F02;&#x5E38;</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span> === <span class="hljs-literal">null</span> || <span class="hljs-keyword">this</span> === <span class="hljs-literal">undefined</span>) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;null &#x6216;&#x8005; undefined &#x6CA1;&#x6709; map &#x5C5E;&#x6027;&quot;</span>)
+    }
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Object</span>.prototype.toString.call(fn) !== <span class="hljs-string">&apos;[object Function]&apos;</span>) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(fn + <span class="hljs-string">&quot;is not a function&quot;</span>);
+    }
+
+    <span class="hljs-comment">// &#x8349;&#x6848;&#x4E2D;&#x63D0;&#x5230;&#x9700;&#x8981;&#x8F6C;&#x6362;&#x4E3A;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;</span>
+    <span class="hljs-keyword">const</span> O = <span class="hljs-built_in">Object</span>(<span class="hljs-keyword">this</span>);
+    <span class="hljs-keyword">const</span> T = context;
+
+    <span class="hljs-keyword">const</span> len = O.length &gt;&gt;&gt; <span class="hljs-number">0</span>; <span class="hljs-comment">// &#x5FEB;&#x901F;&#x5411;&#x4E0B;&#x53D6;&#x6574;</span>
+    <span class="hljs-keyword">const</span> A = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(len);
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; len; i++) {
+        <span class="hljs-comment">// &#x5728;&#x6574;&#x4E2A;&#x539F;&#x578B;&#x94FE;&#x67E5;&#x627E;&#x4F7F;&#x7528;in&#x64CD;&#x4F5C;&#x7B26;, &#x800C;&#x4E0D;&#x662F;&#x4F7F;&#x7528;hasOwnProperty</span>
+        <span class="hljs-keyword">if</span> (k <span class="hljs-keyword">in</span> O) {
+            <span class="hljs-keyword">const</span> nowVal = O[k];
+            <span class="hljs-keyword">const</span> mapVal = fn.call(T, nowVal, k, O);
+            A[k] = mapVal;
+        }
+    }
+    <span class="hljs-keyword">return</span> A;
+}
+
+<span class="hljs-comment">// every &#x7B80;&#x6613;&#x7248;</span>
+
+<span class="hljs-keyword">const</span> every = (arr, fn) =&gt; {
+    <span class="hljs-keyword">const</span> len = arr.length;
+    <span class="hljs-keyword">let</span> res = <span class="hljs-literal">true</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; len; i++) {
+        res = fn(arr[i], i);
+        <span class="hljs-keyword">if</span> (!res) {
+            <span class="hljs-keyword">break</span>;
+        }
+    }
+    <span class="hljs-keyword">return</span> res;
+}
+
+<span class="hljs-comment">// some &#x7B80;&#x6613;&#x7248;</span>
+
+<span class="hljs-keyword">const</span> some = (arr, fn) =&gt; {
+    <span class="hljs-keyword">const</span> len = arr.length;
+    <span class="hljs-keyword">let</span> res = <span class="hljs-literal">true</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i&lt; len; i++) {
+        res = fn(arr[i], i);
+        <span class="hljs-keyword">if</span> (res) {
+            <span class="hljs-keyword">break</span>;
+        }
+    }
+    <span class="hljs-keyword">return</span> res;
+}
+</code></pre>
+<h2 id="&#x95ED;&#x5305;">&#x95ED;&#x5305;</h2>
+<h3 id="&#x6982;&#x5FF5;">&#x6982;&#x5FF5;</h3>
+<p>&#x51FD;&#x6570;&#x548C;&#x5176;&#x5468;&#x56F4;&#x7684;&#x72B6;&#x6001;(&#x8BCD;&#x6CD5;&#x4F5C;&#x7528;&#x57DF;)&#x7684;&#x5F15;&#x7528;&#x6346;&#x7ED1;&#x5728;&#x4E00;&#x8D77;&#x5F62;&#x6210;&#x4E86;&#x95ED;&#x5305;&#x3002;</p>
+<p>&#x51FD;&#x6570;&#x5185;&#x90E8;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x6307;&#x5411;&#x5916;&#x5C42;&#x51FD;&#x6570;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x5C31;&#x5F62;&#x6210;&#x4E86;&#x95ED;&#x5305;&#x3002;</p>
+<p>&#x95ED;&#x5305;&#x4E2D;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5176;&#x5B83;&#x51FD;&#x6570;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x3002;</p>
+<p>&#x56E0;&#x6B64;&#x51FD;&#x6570;&#x4E2D;&#x5982;&#x679C;&#x5B58;&#x5728;&#x95ED;&#x5305;&#xFF0C;&#x5F53;&#x5916;&#x5C42;&#x51FD;&#x6570;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x540E;&#xFF0C;esp&#x6307;&#x9488;&#x4E0B;&#x79FB;&#xFF0C;&#x53D1;&#x73B0;&#x6709;&#x6B63;&#x5728;&#x4F7F;&#x7528;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x8BE5;&#x53D8;&#x91CF;&#x4E0D;&#x4F1A;&#x88AB;&#x56DE;&#x6536;&#xFF0C;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x5C31;&#x4FDD;&#x5B58;&#x4E0B;&#x6765;&#x4E86;&#x3002;</p>
+<h3 id="&#x95ED;&#x5305;&#x4F7F;&#x7528;">&#x95ED;&#x5305;&#x4F7F;&#x7528;</h3>
+<pre><code class="lang-javaScript">
+<span class="hljs-comment">// &#x751F;&#x6210;&#x4E00;&#x4E2A;&#x6C42;&#x6B21;&#x65B9;&#x7684;&#x51FD;&#x6570;(&#x5B9A;&#x5236;&#x5316;&#x51FD;&#x6570;)</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makePower</span> (<span class="hljs-params">power</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">num</span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.pow(num, power)
+    }
+}
+
+<span class="hljs-comment">// &#x4F7F;&#x7528;2&#xFF0C;&#x8BA1;&#x7B97;&#x5DE5;&#x8D44;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeSalary</span>(<span class="hljs-params">base</span>) </span>{
+    <span class="hljs-keyword">return</span> (performance) =&gt; {
+        <span class="hljs-keyword">return</span> base + performance;
+    }
+}
+
+<span class="hljs-comment">// * &#x8FD9;&#x4E00;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;makeSalary&#x6765;&#x751F;&#x6210;&#x5404;&#x7EA7;&#x522B;&#x5458;&#x5DE5;&#x7684;&#x5DE5;&#x8D44;</span>
+<span class="hljs-keyword">let</span> salaryLevel1 = makeSalary(<span class="hljs-number">12000</span>);
+<span class="hljs-keyword">let</span> salaryLevel2 = makeSalary(<span class="hljs-number">15000</span>);
+</code></pre>
 
                                 
                                 </section>
@@ -190,10 +494,10 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Introduction">
-                    <i class="fa fa-angle-left"></i>
-                </a>
                 
+                <a href="2.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 纯函数">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -202,7 +506,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"函数编程范式","level":"1.2","depth":1,"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters"],"pluginsConfig":{"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"part1/1.md","mtime":"2021-04-13T13:49:58.357Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-13T13:54:03.150Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"函数式编程起始","level":"1.2.1","depth":2,"next":{"title":"纯函数","level":"1.2.2","depth":2,"path":"part1/2.md","ref":"part1/2.md","articles":[]},"previous":{"title":"函数编程范式","level":"1.2","depth":1,"ref":"","articles":[{"title":"函数式编程起始","level":"1.2.1","depth":2,"path":"part1/1.md","ref":"part1/1.md","articles":[]},{"title":"纯函数","level":"1.2.2","depth":2,"path":"part1/2.md","ref":"part1/2.md","articles":[]},{"title":"函数组合","level":"1.2.3","depth":2,"path":"part1/3.md","ref":"part1/3.md","articles":[]},{"title":"\b\b函子","level":"1.2.4","depth":2,"path":"part1/4.md","ref":"part1/4.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters"],"pluginsConfig":{"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"part1/1.md","mtime":"2021-04-14T14:43:25.992Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-16T18:00:34.701Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

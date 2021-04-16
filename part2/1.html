@@ -1,0 +1,566 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>JS异步编程 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    函数编程范式
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../part1/1.html">
+            
+                <a href="../part1/1.html">
+            
+                    
+                    函数式编程起始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../part1/2.html">
+            
+                <a href="../part1/2.html">
+            
+                    
+                    纯函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../part1/3.html">
+            
+                <a href="../part1/3.html">
+            
+                    
+                    函数组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../part1/4.html">
+            
+                <a href="../part1/4.html">
+            
+                    
+                    函子
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    JS异步编程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1" data-path="1.html">
+            
+                <a href="1.html">
+            
+                    
+                    JS异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="2.html">
+            
+                <a href="2.html">
+            
+                    
+                    手写Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >JS异步编程</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="js&#x5F02;&#x6B65;&#x7F16;&#x7A0B;">JS&#x5F02;&#x6B65;&#x7F16;&#x7A0B;</h1>
+<h2 id="&#x4E3A;&#x4EC0;&#x4E48;js&#x662F;&#x5355;&#x7EBF;&#x7A0B;">&#x4E3A;&#x4EC0;&#x4E48;JS&#x662F;&#x5355;&#x7EBF;&#x7A0B;</h2>
+<p>&#x6700;&#x521D;JS&#x8BED;&#x8A00;&#x76EE;&#x6807;&#x662F;&#x4F7F;&#x7528;DOM&#x64CD;&#x4F5C;, &#x56E0;&#x6B64;, &#x5927;&#x91CF;&#x7684;DOM&#x64CD;&#x4F5C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x591A;&#x7EBF;&#x7A0B;&#xFF0C;&#x4F1A;&#x6D89;&#x53CA;&#x5230;&#x6781;&#x5176;&#x9EBB;&#x70E6;&#x7684;&#x5E26;&#x9501;&#x64CD;&#x4F5C;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x9632;&#x6B62;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x540C;&#x65F6;&#x64CD;&#x4F5C;&#x540C;&#x4E00;&#x4E2A;DOM&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x4E0D;&#x77E5;&#x6240;&#x63AA;&#x3002;&#x56E0;&#x6B64;&#x6700;&#x5F00;&#x59CB;&#x8BBE;&#x8BA1;&#x51FA;&#x6765;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5355;&#x7EBF;&#x7A0B;&#x8BED;&#x8A00;&#xFF0C;&#x7981;&#x6B62;&#x591A;&#x7EBF;&#x7A0B;&#x64CD;&#x4F5C;DOM&#x3002;</p>
+<p>&#x5355;&#x7EBF;&#x7A0B;&#x6700;&#x5927;&#x7684;&#x4F18;&#x70B9;&#x5C31;&#x662F;&#x7B80;&#x5355;&#xFF0C;&#x5B89;&#x5168;&#xFF0C;&#x7F3A;&#x70B9;&#x5C31;&#x662F;&#x540E;&#x7EED;&#x4EFB;&#x52A1;&#x90FD;&#x8981;&#x6392;&#x961F;&#x7B49;&#x5F85;&#x524D;&#x9762;&#x4EFB;&#x52A1;&#x7684;&#x7ED3;&#x675F;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x4E0A;&#x8FF0;&#x6392;&#x961F;&#x7B49;&#x5F85;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5C06;&#x6267;&#x884C;&#x6A21;&#x5F0F;&#x5206;&#x6210;&#x4E86;<code>&#x540C;&#x6B65;&#x6A21;&#x5F0F;</code>&#x548C;<code>&#x5F02;&#x6B65;&#x6A21;&#x5F0F;</code></p>
+<h2 id="&#x540C;&#x6B65;">&#x540C;&#x6B65;</h2>
+<p>&#x5927;&#x591A;&#x6570;&#x4EFB;&#x52A1;&#x90FD;&#x662F;&#x540C;&#x6B65;&#x6267;&#x884C;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x4E00;&#x4E2A;&#x6392;&#x961F;&#x3002;</p>
+<p>&#x9996;&#x5148;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x533F;&#x540D;&#x51FD;&#x6570;&#xFF0C;&#x538B;&#x5165;&#x6267;&#x884C;&#x6808;&#x3002;&#x7136;&#x540E;&#x8D70;&#x5230;&#x5F53;&#x524D;&#x6267;&#x884C;&#x51FD;&#x6570;&#xFF0C;&#x5C31;&#x4F1A;&#x5C06;&#x5F53;&#x524D;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;&#x538B;&#x5165;&#x8C03;&#x7528;&#x6808;&#xFF0C;&#x8C03;&#x7528;&#x5B8C;&#x6BD5;&#xFF0C;&#x5219;&#x51FA;&#x6808;&#x3002;&#x51FD;&#x6570;&#x58F0;&#x660E;&#x4E0D;&#x4F1A;&#x4EA7;&#x751F;&#x4EFB;&#x4F55;&#x8C03;&#x7528;&#xFF0C;&#x4F46;&#x662F;&#x4F1A;&#x7EE7;&#x7EED;&#x5F80;&#x4E0B;&#x6267;&#x884C;&#x3002;</p>
+<p>&#x51FD;&#x6570;&#x6267;&#x884C;&#x662F;&#x5916;&#x5C42;&#x5148;&#x5165;&#x6808;&#x5185;&#x5C42;&#x540E;&#x5165;&#x6808;&#xFF0C;&#x5185;&#x5C42;&#x6267;&#x884C;&#x5B8C;&#x5C31;&#x51FA;&#x6808;&#xFF0C;&#x6700;&#x540E;&#x624D;&#x662F;&#x5916;&#x5C42;&#x51FA;&#x6808;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x8C03;&#x7528;&#x6808;&#x5C31;&#x662F;&#x4E00;&#x4E2A;js&#x5DE5;&#x4F5C;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x5DE5;&#x4F5C;&#x8868;&#x3002;&#x5F53;&#x8C03;&#x7528;&#x6808;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x4EFB;&#x52A1;&#x90FD;&#x6E05;&#x7A7A;&#xFF0C;&#x5DE5;&#x4F5C;&#x5C31;&#x7ED3;&#x675F;&#x4E86;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#x8FD9;&#x79CD;&#x662F;&#x6700;&#x7B80;&#x5355;&#x7684;&#x540C;&#x6B65;&#x4EFB;&#x52A1;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x8017;&#x65F6;&#x8F83;&#x5927;&#x7684;&#x540C;&#x6B65;&#x4EFB;&#x52A1;&#xFF0C;&#x4F1A;&#x963B;&#x585E;&#x540E;&#x7EED;&#x7684;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#xFF0C;&#x56E0;&#x6B64;&#x8981;&#x5F15;&#x5165;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x3002;</p>
+<h2 id="&#x5F02;&#x6B65;">&#x5F02;&#x6B65;</h2>
+<p>&#x9047;&#x5230;setTimeout&#xFF0C;&#x4F1A;&#x5728;WebAPIS&#x4E2D;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x5012;&#x8BA1;&#x65F6;&#x5668;&#xFF0C;&#x8FD9;&#x4E2A;&#x5012;&#x8BA1;&#x65F6;&#x662F;&#x5355;&#x72EC;&#x5DE5;&#x4F5C;&#x7684;&#xFF0C;&#x4E0D;&#x4F1A;&#x5BF9;js&#x6267;&#x884C;&#x4EA7;&#x751F;&#x5F71;&#x54CD;&#xFF0C;setTimeout&#x4F1A;&#x5165;&#x6808;&#xFF0C;&#x5F00;&#x542F;&#x540E;&#x5C31;&#x51FA;&#x6808;&#x4E86;&#x3002;</p>
+<p>&#x5047;&#x8BBE;WebAPIs&#x4E2D;&#x6709;&#x4E24;&#x4E2A;timer&#x5012;&#x8BA1;&#x65F6;&#x5668;&#xFF0C;&#x7B49;&#x5012;&#x8BA1;&#x65F6;&#x7ED3;&#x675F;&#x4E86;&#xFF0C;&#x5C31;&#x4F1A;&#x8FDB;&#x5165;&#x6D88;&#x606F;&#x961F;&#x5217;(Queue)&#x4E2D;&#xFF0C;&#x5148;&#x8FDB;&#x5148;&#x51FA;&#xFF0C;&#x6309;&#x987A;&#x5E8F;&#x8FDB;&#x5165;&#xFF0C;&#x5F53;&#x76D1;&#x542C;&#x5230;&#x53D8;&#x5316;&#xFF0C;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E2D;&#x7B2C;&#x4E00;&#x4E2A;&#x5C31;&#x8981;&#x51FA;&#x53BB;&#xFF0C;&#x8FDB;&#x5165;&#x6267;&#x884C;&#x6808;&#x3002; </p>
+<p>&#x76F4;&#x5230;&#x6D88;&#x606F;&#x961F;&#x5217;&#x548C;&#x8C03;&#x7528;&#x6808;&#x4E2D;&#x90FD;&#x6CA1;&#x6709;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#x4E86;&#xFF0C; &#x6267;&#x884C;&#x5C31;&#x7ED3;&#x675F;&#x4E86;</p>
+<p>&#x5F53;&#x7136;js&#x662F;&#x5355;&#x7EBF;&#x7A0B;&#xFF0C;&#x4F46;&#x662F;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x5E76;&#x4E0D;&#x662F;&#x5355;&#x7EBF;&#x7A0B;&#x7684;&#xFF0C;&#x6BD4;&#x5982;&#x5012;&#x8BA1;&#x65F6;&#x5668;&#xFF0C;&#x662F;&#x5355;&#x72EC;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x5728;&#x6267;&#x884C;&#x3002;</p>
+<h2 id="&#x56DE;&#x8C03;&#x51FD;&#x6570;">&#x56DE;&#x8C03;&#x51FD;&#x6570;</h2>
+<p>&#x6240;&#x6709;&#x5F02;&#x6B65;&#x65B9;&#x6848;&#x7684;&#x6839;&#x672C;&#x90FD;&#x662F;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;</p>
+<p>&#x7531;&#x4E8E;&#x4F60;&#x4E0D;&#x77E5;&#x9053;&#x4EFB;&#x52A1;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x7ED3;&#x675F;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x628A;&#x8FD9;&#x4EF6;&#x4E8B;&#x60C5;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x7684;&#x6267;&#x884C;&#x8005;&#xFF0C;&#x8BA9;&#x6267;&#x884C;&#x8005;&#x53BB;&#x5E2E;&#x4F60;&#x6267;&#x884C;&#xFF0C;&#x786E;&#x5B9A;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x5B8C;&#x6210;&#x3002;</p>
+<p>&#x6BD4;&#x5982;&#x6211;&#x8981;&#x4E70;&#x6CB9;&#x6F06;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x5F88;&#x5FD9;&#xFF0C;&#x5C31;&#x5199;&#x4E86;&#x4E00;&#x4E2A;&#x600E;&#x4E48;&#x5237;&#x6F06;&#x7684;&#x6B65;&#x9AA4;&#xFF0C;&#x4EA4;&#x7ED9;&#x53E6;&#x4E00;&#x4E2A;&#x4EBA;&#xFF0C; &#x8BA9;&#x4ED6;&#x53BB;&#x4E70;&#x6CB9;&#x6F06;&#xFF0C;&#x5E76;&#x4E14;&#x64CD;&#x4F5C;&#x5237;&#x6F06;&#x3002;&#x6211;&#x5C31;&#x662F;&#x8C03;&#x7528;&#x8005;&#xFF0C; &#x53E6;&#x4E00;&#x4E2A;&#x4EBA;&#x5C31;&#x662F;&#x6267;&#x884C;&#x8005;&#x3002;</p>
+<p>&#x7531;&#x8C03;&#x7528;&#x8005;&#x5B9A;&#x4E49;&#xFF0C;&#x4EA4;&#x7ED9;&#x6267;&#x884C;&#x8005;&#x53BB;&#x6267;&#x884C;&#x5C31;&#x662F;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;</p>
+<h2 id="promise">Promise</h2>
+<p>&#x5982;&#x679C;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x53BB;&#x5B8C;&#x6210;&#x5F02;&#x6B65;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x5927;&#x91CF;&#x5D4C;&#x5957;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x56DE;&#x8C03;&#x5730;&#x72F1;&#x3002;</p>
+<p>&#x793E;&#x533A;&#x4E2D;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;&#x53EB;&#x505A;Promise&#x89C4;&#x8303;&#xFF0C;&#x53BB;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#xFF0C;&#x540E;&#x6765;&#x5728;ES2015&#x4E2D;&#x6210;&#x4E86;ES&#x89C4;&#x8303;&#x3002;</p>
+<p>Promise&#x5B9E;&#x9645;&#x4E0A;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x8868;&#x793A;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x7ED3;&#x675F;&#x540E;&#x662F;&#x6210;&#x529F;&#x8FD8;&#x662F;&#x5931;&#x8D25;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x5C31;&#x50CF;&#x4E00;&#x5F00;&#x59CB;&#x505A;&#x4E86;&#x4E00;&#x4E2A;&#x627F;&#x8BFA;&#xFF0C;&#x4E00;&#x5F00;&#x59CB;&#x662F;pending&#x72B6;&#x6001;&#xFF0C;&#x4ED6;&#x53EF;&#x80FD;&#x6210;&#x529F;fulfilled&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x5931;&#x8D25;&#x4E5F;&#x5C31;&#x662F;rejected</p>
+<p>&#x56E0;&#x6B64;&#x627F;&#x8BFA;&#x4E0D;&#x7BA1;&#x6700;&#x7EC8;&#x662F;&#x8FBE;&#x6210;&#x8FD8;&#x662F;&#x5931;&#x8D25;&#xFF0C;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x76F8;&#x5BF9;&#x7684;&#x53CD;&#x5E94;&#xFF0C;&#x5C31;&#x662F;&#x627F;&#x8BFA;&#x72B6;&#x6001;&#x6539;&#x53D8;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x90FD;&#x6709;&#x76F8;&#x5BF9;&#x7684;&#x52A8;&#x4F5C;&#x8981;&#x6267;&#x884C;</p>
+<p>&#x5E76;&#x4E14;&#x8FD9;&#x4E2A;&#x627F;&#x8BFA;&#x5B8C;&#x6210;&#x4E86;&#x4E4B;&#x540E;&#xFF0C;&#x4E0D;&#x7BA1;&#x662F;&#x6210;&#x529F;&#x8FD8;&#x662F;&#x5931;&#x8D25;&#xFF0C;&#x90FD;&#x4E0D;&#x4F1A;&#x5728;&#x6539;&#x53D8;&#x4E86;&#x3002;</p>
+<h2 id="promisethen">Promise.then</h2>
+<p>&#x5728;then&#x4E2D;&#x4E5F;&#x6709;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x662F;&#x6210;&#x529F;&#x7684;&#x56DE;&#x8C03;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x662F;&#x5931;&#x8D25;&#x7684;&#x56DE;&#x8C03;, &#x5E76;&#x4E14;then&#x65B9;&#x6CD5;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684;Promise(&#x662F;&#x65B0;&#x7684;&#x4E0D;&#x662F;&#x5F53;&#x524D;&#x7684;)</p>
+<p>&#x6015;&#x90A3;Promise&#x4E2D;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#xFF0C;then&#x4E5F;&#x8981;&#x7B49;&#x5F85;&#x6267;&#x884C;&#x6392;&#x961F;(&#x5EF6;&#x8FDF;&#x6302;&#x8F7D;)</p>
+<p>&#x5982;&#x679C;then&#x4E2D;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x65B0;&#x7684;promise(&#x663E;&#x793A;&#x8FD4;&#x56DE;), &#x4E0B;&#x4E00;&#x6B21;then&#x5C06;&#x7B49;&#x5F85;&#x8FD9;&#x4E2A;promise&#x6267;&#x884C;</p>
+<h2 id="promise&#x4F7F;&#x7528;&#x6848;&#x4F8B;">Promise&#x4F7F;&#x7528;&#x6848;&#x4F8B;</h2>
+<pre><code class="lang-javaScript"><span class="hljs-comment">// ajax</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ajax</span>(<span class="hljs-params">url, type</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, rejected) =&gt; {
+        <span class="hljs-keyword">var</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();
+        xhr.open(type, url);
+        xhr.responseType = <span class="hljs-string">&apos;json&apos;</span>;
+        xhr.onLoad = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.status === <span class="hljs-number">200</span>) {
+                resolve(<span class="hljs-keyword">this</span>.response);
+            } <span class="hljs-keyword">else</span> {
+                reject(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-keyword">this</span>.statusText));
+            }
+        }
+        xhr.send()
+    })
+}
+</code></pre>
+<h2 id="promisecatch">promise.catch</h2>
+<p>&#x76F8;&#x5F53;&#x4E8E;<code>promise.then(undefined, err =&gt; {console.info(err)})</code></p>
+<p>&#x5982;&#x679C;then&#x4E2D;&#x8FD4;&#x56DE;&#x7684;promise&#x6709;&#x5F02;&#x5E38;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x5F53;&#x524D;then&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x53BB;&#x6355;&#x83B7;&#x5F02;&#x5E38;&#xFF0C;&#x662F;&#x6355;&#x83B7;&#x4E0D;&#x5230;&#x7684;</p>
+<p>promise&#x4E2D;&#x7684;&#x9519;&#x8BEF;&#x662F;&#x7A7F;&#x900F;&#x7684;(&#x4E00;&#x76F4;&#x5411;&#x540E;&#x4F20;&#x9012;&#xFF0C;&#x76F4;&#x5230;&#x6355;&#x83B7;)</p>
+<h3 id="&#x5168;&#x5C40;&#x5BF9;&#x8C61;&#x4E0A;&#x5904;&#x7406;&#x5F02;&#x5E38;">&#x5168;&#x5C40;&#x5BF9;&#x8C61;&#x4E0A;&#x5904;&#x7406;&#x5F02;&#x5E38;</h3>
+<pre><code class="lang-javaScript"><span class="hljs-comment">// &#x6D4F;&#x89C8;&#x5668;</span>
+<span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">&apos;unhandledrejection&apos;</span>, event =&gt; {
+    <span class="hljs-keyword">const</span> {reason, promise} = event;
+    <span class="hljs-built_in">console</span>.info(reason, promise);
+    <span class="hljs-comment">// reasion =&gt; Promise &#x5931;&#x8D25;&#x539F;&#x56E0;, &#x4E00;&#x822C;&#x662F;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x5BF9;&#x8C61;</span>
+    <span class="hljs-comment">// promise =&gt; &#x51FA;&#x73B0;&#x5F02;&#x5E38;&#x7684;Promise&#x5BF9;&#x8C61;</span>
+    event.preventDefault();
+}, <span class="hljs-literal">false</span>);
+
+<span class="hljs-comment">// node</span>
+process.on(<span class="hljs-string">&apos;unhandledRejection&apos;</span>, (reason, promise) =&gt; {
+    <span class="hljs-built_in">console</span>.info(reason, promise);
+    <span class="hljs-comment">// reasion =&gt; Promise &#x5931;&#x8D25;&#x539F;&#x56E0;, &#x4E00;&#x822C;&#x662F;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x5BF9;&#x8C61;</span>
+    <span class="hljs-comment">// promise =&gt; &#x51FA;&#x73B0;&#x5F02;&#x5E38;&#x7684;Promise&#x5BF9;&#x8C61;</span>
+});
+
+<span class="hljs-comment">// &#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x4E0D;&#x63A8;&#x8350;&#xFF0C;&#x5E94;&#x8BE5;&#x660E;&#x786E;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x6355;&#x83B7;&#x5F02;&#x5E38;</span>
+</code></pre>
+<h2 id="promise&#x9759;&#x6001;&#x65B9;&#x6CD5;">promise&#x9759;&#x6001;&#x65B9;&#x6CD5;</h2>
+<h3 id="promiseresolve">promise.resolve()</h3>
+<p>&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6210;&#x529F;&#x7684;&#x5BF9;&#x8C61;</p>
+<pre><code class="lang-javaScript">promise.resolve(<span class="hljs-string">&apos;foo&apos;</span>).then(res =&gt; {
+    <span class="hljs-built_in">console</span>.info(res)
+})
+
+<span class="hljs-comment">// &#x5B8C;&#x5168;&#x7B49;&#x4EF7;&#x4E8E;</span>
+<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve) =&gt; {
+    resolve(<span class="hljs-string">&apos;foo&apos;</span>)
+}).then(res =&gt; {
+    <span class="hljs-built_in">console</span>.info(res)
+})
+</code></pre>
+<p>&#x4F46;&#x5982;&#x679C;&#x4F7F;&#x7528;promise.resolve()&#x53BB;&#x5305;&#x88C5;&#x4E00;&#x4E2A;promise&#x5BF9;&#x8C61;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x5F97;&#x5230;&#x7684;&#x5C31;&#x662F;&#x539F;&#x672C;&#x7684;promise&#x5BF9;&#x8C61;</p>
+<p>&#x8FD8;&#x6709;&#x4E00;&#x79CD;&#x5982;&#x4E0B;&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x679C;&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x5E26;&#x6709;then&#x5C5E;&#x6027;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x4E14;then&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x6709;&#x4E00;&#x4E2A;onFulfilled&#x548C;onRejected, &#x5E76;&#x4E14;onFulfilled&#x4E86;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x90A3;&#x4E48;&#x4ED6;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;thenable&#x4F7F;&#x7528;, &#x88AB;&#x4E0B;&#x4E00;&#x4E2A;then&#x4E2D;&#x6355;&#x83B7;&#x5230;onFulfilled&#x8FD4;&#x56DE;&#x7684;&#x503C;&#x3002;</p>
+<p>&#x4E3B;&#x8981;&#x662F;&#x56E0;&#x4E3A;&#x5728;Promise&#x8FD8;&#x6CA1;&#x6709;&#x666E;&#x53CA;&#x4E4B;&#x524D;&#xFF0C;&#x6709;&#x8BB8;&#x591A;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x4F7F;&#x7528;&#x7684;&#x8FD9;&#x79CD;thenable&#x6765;&#x5B9E;&#x73B0;&#xFF0C; &#x5927;&#x6982;&#x5C31;&#x662F;&#x4E0A;&#x8FF0;&#x65B9;&#x5F0F;&#x3002;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;promise.resolve()&#x53BB;&#x5305;&#x88C5;&#x4E00;&#x4E2A;thenable, &#x8BA9;&#x5B83;&#x53D8;&#x6210;&#x4E00;&#x4E2A;&#x539F;&#x751F;&#x7684;promise</p>
+<h3 id="promisereject">promise.reject()</h3>
+<p>&#x5FEB;&#x901F;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E00;&#x5B9A;&#x4F1A;&#x5931;&#x8D25;&#x7684;promise&#x5BF9;&#x8C61;</p>
+<h2 id="promise&#x5E76;&#x884C;&#x6267;&#x884C;">Promise&#x5E76;&#x884C;&#x6267;&#x884C;</h2>
+<h3 id="promiseall">promise.all()</h3>
+<p><code>promise.all(Array&lt;Promise&gt;) =&gt; Promise</code></p>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;promise&#x5931;&#x8D25;&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x8FD4;&#x56DE;&#x7684;promise&#x5C31;&#x662F;&#x5931;&#x8D25;&#x7684;&#x3002;</p>
+<h3 id="promiserece">promise.rece()</h3>
+<p>&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x7ED3;&#x675F;&#x5C31;&#x8FD4;&#x56DE;</p>
+<h3 id="promiseallsettled">Promise.allSettled()</h3>
+<blockquote>
+<p>&#x65E0;&#x72B6;&#x6001;&#xFF0C;es2020&#x65B0;&#x589E;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x7EC4;&#x4E2D;&#x8868;&#x793A;&#x6240;&#x6709;&#x7684;&#x5BF9;&#x8C61;&#x6267;&#x884C;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x4E0D;&#x7BA1;&#x662F;&#x6210;&#x529F;&#x8FD8;&#x662F;&#x5931;&#x8D25;
+&#x6BD4;&#x5982;&#x4F20;&#x5165;5&#x4E2A;promise, &#x7B2C;&#x4E09;&#x4E2A;&#x5931;&#x8D25;&#x4E86;&#xFF0C;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x5C31;&#x662F;: <code>[resolved, resolved, rejected, resolved, resolved]</code></p>
+</blockquote>
+<h2 id="promise&#x6267;&#x884C;&#x987A;&#x5E8F;">Promise&#x6267;&#x884C;&#x987A;&#x5E8F;</h2>
+<p>&#x5B8F;&#x4EFB;&#x52A1;/&#x5FAE;&#x4EFB;&#x52A1;</p>
+<blockquote>
+<p>&#x56DE;&#x8C03;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x4EFB;&#x52A1;&#x6709;&#x4E00;&#x79CD;&#x53EB;&#x6CD5;&#x5C31;&#x662F;&#x5B8F;&#x4EFB;&#x52A1;
+&#x5B8F;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x53EF;&#x80FD;&#x4F1A;&#x4E34;&#x65F6;&#x52A0;&#x4E0A;&#x4E00;&#x4E9B;&#x4E34;&#x65F6;&#x7684;&#x989D;&#x5916;&#x9700;&#x6C42;&#xFF0C;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5B8F;&#x4EFB;&#x52A1;&#x8FDB;&#x5230;&#x961F;&#x5217;&#x4E2D;&#x6392;&#x961F;
+&#x4E5F;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x5F53;&#x524D;&#x4EFB;&#x52A1;&#x7684;&#x5FAE;&#x4EFB;&#x52A1;
+&#x5FAE;&#x4EFB;&#x52A1;&#x5C31;&#x662F;&#x5728;&#x76F4;&#x63A5;&#x5728;&#x5F53;&#x524D;&#x4EFB;&#x52A1;&#x7ED3;&#x675F;&#x540E;&#x7ACB;&#x5373;&#x6267;&#x884C;
+Promise&#x5C31;&#x662F;&#x5728;&#x672C;&#x8F6E;&#x8C03;&#x7528;&#x7684;&#x7ED3;&#x675F;&#x7684;&#x672B;&#x5C3E;&#x53BB;&#x6267;&#x884C;(&#x5FAE;&#x4EFB;&#x52A1;)</p>
+</blockquote>
+<p>&#x4E3B;&#x8981;&#x5C31;&#x662F;&#x4E3A;&#x4E86;&#x63D0;&#x9AD8;&#x6574;&#x4F53;&#x54CD;&#x5E94;&#x80FD;&#x529B;</p>
+<p>Promise &amp; MutationObserver &amp; process.nextTick(node)&#x90FD;&#x662F;&#x5FAE;&#x4EFB;&#x52A1;&#xFF0C;&#x5728;&#x672C;&#x8F6E;&#x8C03;&#x7528;&#x7684;&#x672B;&#x5C3E;&#x5C31;&#x7ACB;&#x5373;&#x6267;&#x884C;</p>
+<h2 id="generator&#x5F02;&#x6B65;&#x65B9;&#x6848;">Generator&#x5F02;&#x6B65;&#x65B9;&#x6848;</h2>
+<p>ES2015&#x63D0;&#x4F9B;&#x7684;&#x751F;&#x6210;&#x5668;</p>
+<p>&#x4F7F;&#x7528; function * &#x58F0;&#x660E;, &#x9047;&#x5230;yield&#x5C31;&#x505C;&#x6B62;, &#x4E0B;&#x6B21;&#x4F7F;&#x7528;next&#x5219;&#x7EE7;&#x7EED;, &#x5E76;&#x4E14;next()&#x6267;&#x884C;&#x540E;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x503C;, &#x5305;&#x542B;&#x4E86;yield&#x8FD4;&#x56DE;&#x7684;value&#x548C;&#x4E00;&#x4E2A;done&#x5C5E;&#x6027;, done&#x5C5E;&#x6027;&#x8981;&#x7528;&#x4E8E;&#x8868;&#x793A;&#x751F;&#x6210;&#x5668;&#x662F;&#x5426;&#x6267;&#x884C;&#x5B8C;&#x6210;</p>
+<p>&#x5E76;&#x4E14;next()&#x4E2D;&#x53EF;&#x4EE5;&#x5E26;&#x53C2;&#x6570;, &#x5F53;&#x5E26;&#x53C2;&#x6267;&#x884C;next&#x65F6;&#x5019;, yield&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x8FD9;&#x4E2A;&#x503C;&#x5C31;&#x662F;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;</p>
+<p>&#x5982;&#x679C;&#x8C03;&#x7528;generator.throw()&#x65B9;&#x6CD5;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x8BA9;&#x751F;&#x6210;&#x5668;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#xFF0C;&#x4F46;&#x662F;&#x4F1A;&#x629B;&#x51FA;&#x4E00;&#x4E2A;&#x5F02;&#x5E38;</p>
+<p>&#x751F;&#x6210;&#x5668;&#x4E2D; yield&#x524D;&#x9762;&#x6709;return&#x548C;&#x666E;&#x901A;&#x51FD;&#x6570;&#x4E00;&#x6837;&#xFF0C;&#x4E0D;&#x7BA1;&#x540E;&#x9762;&#x8FD8;&#x6709;&#x6CA1;&#x6709;yield&#x90FD;&#x4E0D;&#x4F1A;&#x6267;&#x884C;&#x4E86;</p>
+<blockquote>
+<p>&#x6CE8;&#x610F;: &#x7B2C;&#x4E00;&#x6B21;&#x8C03;&#x7528;next&#x662F;&#x6267;&#x884C;yield&#x540E;&#x9762;&#x7684;&#x503C;, &#x4F46;&#x662F;&#x7B2C;&#x4E8C;&#x6B21;&#x8C03;&#x7528;next&#x5E76;&#x4E14;&#x4F20;&#x53C2;, &#x5C31;&#x53EF;&#x4EE5;&#x628A;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x4F5C;&#x4E3A; yield&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x4F7F;&#x7528;&#x4E86;
+&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x7B2C;&#x4E8C;&#x6B21;&#x8C03;&#x7528;next&#x662F;&#x628A;&#x53C2;&#x6570;&#x4F5C;&#x4E3A;&#x7B2C;&#x4E00;&#x4E2A;yield&#x7684;&#x503C;&#x5E76;&#x4E14;&#x6267;&#x884C;&#x540E;&#x7EED;&#x7684;&#x903B;&#x8F91;, &#x6267;&#x884C;&#x5230;&#x7B2C;&#x4E8C;&#x4E2A;yield&#x4E3A;&#x6B62;, &#x8FD9;&#x4E00;&#x6B21;&#x7684;next&#x662F;&#x8FD4;&#x56DE;&#x7B2C;&#x4E8C;&#x4E2A;yield&#x7684;&#x6267;&#x884C;&#x7ED3;&#x679C;</p>
+</blockquote>
+<h3 id="&#x4F7F;&#x7528;generator&#x5C01;&#x88C5;ajax&#x8BF7;&#x6C42;">&#x4F7F;&#x7528;generator&#x5C01;&#x88C5;ajax&#x8BF7;&#x6C42;</h3>
+<pre><code class="lang-javaScript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ajax</span>(<span class="hljs-params">url, type</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, rejected) =&gt; {
+        <span class="hljs-keyword">var</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();
+        xhr.open(type, url);
+        xhr.responseType = <span class="hljs-string">&apos;json&apos;</span>;
+        xhr.onLoad = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.status === <span class="hljs-number">200</span>) {
+                resolve(<span class="hljs-keyword">this</span>.response);
+            } <span class="hljs-keyword">else</span> {
+                reject(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-keyword">this</span>.statusText));
+            }
+        }
+        xhr.send()
+    })
+}
+
+<span class="hljs-comment">// function * main() {</span>
+<span class="hljs-comment">//     const user = yield ajax(&apos;/api/users.json&apos;, &apos;get&apos;);</span>
+<span class="hljs-comment">//     console.info(user);</span>
+<span class="hljs-comment">// }</span>
+
+<span class="hljs-comment">// &#x901A;&#x8FC7;apiArr&#x751F;&#x6210;&#x8BF7;&#x6C42;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> * <span class="hljs-title">main</span>(<span class="hljs-params">apiArr</span>) </span>{
+    <span class="hljs-comment">// const user = yield ajax(&apos;/api/users.json&apos;, &apos;get&apos;);</span>
+    <span class="hljs-comment">// console.info(user);</span>
+
+    <span class="hljs-comment">// const user2 = yield ajax(&apos;/api/user&apos;)</span>
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">while</span>(i &lt; apiArr.length) {
+            <span class="hljs-keyword">const</span> user = <span class="hljs-keyword">yield</span> ajax(apiArr[i], <span class="hljs-string">&apos;get&apos;</span>);
+            <span class="hljs-built_in">console</span>.info(user);
+            i++;
+        }
+    } <span class="hljs-keyword">catch</span> (e) {
+        <span class="hljs-built_in">console</span>.info(e);
+    }
+
+}
+
+<span class="hljs-keyword">const</span> g = main([<span class="hljs-string">&apos;/api/users.json&apos;</span>, <span class="hljs-string">&apos;/api/users.json&apos;</span>, <span class="hljs-string">&apos;/api/users.json&apos;</span>, <span class="hljs-string">&apos;/api/users.json&apos;</span>]);
+
+<span class="hljs-comment">// const g = main();</span>
+
+<span class="hljs-keyword">const</span> result = g.next();
+
+
+<span class="hljs-comment">// &#x901A;&#x7528;&#x751F;&#x6210;&#x5668;&#x4E00;&#x76F4;&#x6267;&#x884C;(&#x81EA;&#x5DF1;&#x5B9E;&#x73B0;)</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isGoNext</span>(<span class="hljs-params">res</span>) </span>{
+    res.value.then(data =&gt; {
+        <span class="hljs-keyword">const</span> res2 = g.next(data)
+        <span class="hljs-keyword">if</span> (res2.done) {
+            <span class="hljs-keyword">return</span>;
+        } <span class="hljs-keyword">else</span> {
+            isGoNext(res2)
+        }
+    })
+}
+isGoNext(result);
+<span class="hljs-comment">// * &#x6559;&#x7A0B;&#x5B9E;&#x73B0;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleResult</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">if</span> (res.done) <span class="hljs-keyword">return</span>;
+    res.value.then(data =&gt; {
+        handleResult(g.next(data))
+    } err =&gt; {
+        g.throw(err); <span class="hljs-comment">// &#x6355;&#x83B7;&#x5F02;&#x5E38;</span>
+    })
+}
+
+<span class="hljs-comment">// &#x5176;&#x5B9E;&#x5728;&#x5957;&#x4E00;&#x5C42;&#x58F3;, &#x4ED6;&#x5C31;&#x662F;co&#x5E93;&#x4E86;, &#x8FD9;&#x4E5F;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;co&#x9047;&#x5230;yield&#x4F1A;&#x8FBE;&#x5230;&#x7C7B;&#x4F3C;&#x4E8E;async &#x9047;&#x5230; await&#x7684;&#x6548;&#x679C;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">co</span>(<span class="hljs-params">generator</span>) </span>{
+    <span class="hljs-keyword">const</span> g = generator();
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleResult</span>(<span class="hljs-params">res</span>) </span>{
+        <span class="hljs-keyword">if</span> (res.done) <span class="hljs-keyword">return</span>;
+        res.value.then(data =&gt; {
+            handleResult(g.next(data))
+        } err =&gt; {
+            g.throw(err); <span class="hljs-comment">// &#x6355;&#x83B7;&#x5F02;&#x5E38;</span>
+        })
+    }
+    handleResult(g.next())
+}
+<span class="hljs-comment">/* result.value.then(data =&gt; {
+    g.next(data); // &#x8FD9;&#x4E00;&#x6B21;&#x6267;&#x884C;&#x4E4B;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x751F;&#x6210;&#x5668;&#x51FD;&#x6570;&#x4E2D;&#x6253;&#x5370;&#x51FA;data&#x4E86;, &#x8FD9;&#x4E2A;data&#x5C06;&#x4F5C;&#x4E3A;user&#x7684;&#x503C;&#x4F20;&#x5165;&#x751F;&#x6210;&#x5668;, &#x5E76;&#x4E14;&#x751F;&#x6210;&#x5668;&#x5411;&#x540E;&#x6267;&#x884C;&#x3002;
+    if (result.done)
+}); */</span>
+</code></pre>
+<h2 id="asyncawait">async/await</h2>
+<blockquote>
+<p>&#x7531;&#x4E8E;&#x4F7F;&#x7528;&#x751F;&#x6210;&#x5668;&#x8FC7;&#x4E8E;&#x9EBB;&#x70E6;, &#x8FD8;&#x8981;&#x81EA;&#x5DF1;&#x53BB;&#x5B9E;&#x73B0;&#x6216;&#x8005;&#x5F15;&#x5165;&#x4E00;&#x4E2A;co&#x5E93;, &#x56E0;&#x6B64;&#x5728;ECMA2017&#x4E2D;&#x5F15;&#x5165;&#x4E86;async/await
+&#x4ED6;&#x540C;&#x6837;&#x63D0;&#x4F9B;&#x4E86;&#x6241;&#x5E73;&#x5316;&#x7684;&#x5F02;&#x6B65;&#x7F16;&#x7A0B;&#x4F53;&#x9A8C;, &#x4ED6;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x751F;&#x6210;&#x5668;&#x51FD;&#x6570;&#x7684;&#x4E00;&#x79CD;&#x6807;&#x51C6;&#x7684;&#x8BED;&#x6CD5;&#x7CD6;&#x3002;</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="2.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 手写Promise">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"JS异步编程","level":"1.3.1","depth":2,"next":{"title":"手写Promise","level":"1.3.2","depth":2,"path":"part2/2.md","ref":"part2/2.md","articles":[]},"previous":{"title":"JS异步编程","level":"1.3","depth":1,"ref":"","articles":[{"title":"JS异步编程","level":"1.3.1","depth":2,"path":"part2/1.md","ref":"part2/1.md","articles":[]},{"title":"手写Promise","level":"1.3.2","depth":2,"path":"part2/2.md","ref":"part2/2.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters"],"pluginsConfig":{"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"part2/1.md","mtime":"2021-04-16T15:14:00.946Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-16T18:00:34.701Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

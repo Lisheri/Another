@@ -1,0 +1,516 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>纯函数 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="3.html" />
+    
+    
+    <link rel="prev" href="1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    函数编程范式
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1.html">
+            
+                <a href="1.html">
+            
+                    
+                    函数式编程起始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="2.html">
+            
+                <a href="2.html">
+            
+                    
+                    纯函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="3.html">
+            
+                <a href="3.html">
+            
+                    
+                    函数组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="4.html">
+            
+                <a href="4.html">
+            
+                    
+                    函子
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    JS异步编程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../part2/1.html">
+            
+                <a href="../part2/1.html">
+            
+                    
+                    JS异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../part2/2.html">
+            
+                <a href="../part2/2.html">
+            
+                    
+                    手写Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >纯函数</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x7EAF;&#x51FD;&#x6570;">&#x7EAF;&#x51FD;&#x6570;</h2>
+<h3 id="&#x7EAF;&#x51FD;&#x6570;&#x6982;&#x5FF5;">&#x7EAF;&#x51FD;&#x6570;&#x6982;&#x5FF5;:</h3>
+<p><code>&#x76F8;&#x540C;&#x7684;&#x8F93;&#x5165;&#x6C38;&#x8FDC;&#x90FD;&#x4F1A;&#x5F97;&#x5230;&#x76F8;&#x540C;&#x7684;&#x8F93;&#x51FA;&#xFF0C; &#x800C;&#x4E14;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x53EF;&#x89C2;&#x5BDF;&#x7684;&#x526F;&#x4F5C;&#x7528;&#x3002;</code></p>
+<p>&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x63CF;&#x8FF0;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x7684;&#x4E00;&#x4E2A;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#x3002;</p>
+<p>&#x6BD4;&#x5982;&#x6570;&#x7EC4;&#x7684;slice&#x548C;splice&#xFF0C;slice&#x662F;&#x7EAF;&#x51FD;&#x6570;&#xFF0C;splice&#x662F;&#x975E;&#x7EAF;&#x51FD;&#x6570;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x7EAF;&#x51FD;&#x6570;&#x5FC5;&#x987B;&#x6709;&#x8F93;&#x5165;&#xFF0C;&#x800C;&#x4E14;&#x5FC5;&#x987B;&#x6709;&#x8F93;&#x51FA;&#xFF0C;&#x65E0;&#x8BBA;&#x8C03;&#x7528;&#x591A;&#x5C11;&#x6B21;&#xFF0C;&#x53EA;&#x8981;&#x8F93;&#x5165;&#x76F8;&#x540C;&#xFF0C;&#x8F93;&#x51FA;&#x4E5F;&#x4E00;&#x5B9A;&#x662F;&#x76F8;&#x540C;&#x7684;&#x3002;</p>
+<p>&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x4E2D;&#xFF0C;&#x4E0D;&#x4F1A;&#x4FDD;&#x7559;&#x4E2D;&#x95F4;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x6240;&#x4EE5;&#x53D8;&#x91CF;&#x662F;&#x4E0D;&#x53EF;&#x53D8;&#x7684;(&#x4E5F;&#x5C31;&#x662F;&#x65E0;&#x72B6;&#x6001;)</p>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x628A;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x4EA4;&#x7ED9;&#x53E6;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x53BB;&#x5904;&#x7406;&#x3002;</p>
+<h3 id="lodash">lodash</h3>
+<p>&#x662F;&#x4E00;&#x4E2A;js&#x7684;&#x51FD;&#x6570;&#x529F;&#x80FD;&#x5E93;, &#x6709;&#x5927;&#x91CF;&#x65B9;&#x4FBF;&#x64CD;&#x4F5C;&#x6570;&#x7EC4;&#xFF0C;&#x51FD;&#x6570;&#xFF0C;&#x96C6;&#x5408;&#x7B49;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<h3 id="&#x7EAF;&#x51FD;&#x6570;&#x7684;&#x597D;&#x5904;">&#x7EAF;&#x51FD;&#x6570;&#x7684;&#x597D;&#x5904;</h3>
+<ul>
+<li>&#x53EF;&#x7F13;&#x5B58;: &#x56E0;&#x4E3A;&#x76F8;&#x540C;&#x7684;&#x8F93;&#x5165;&#x4F1A;&#x6709;&#x76F8;&#x540C;&#x7684;&#x8F93;&#x51FA;, &#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x7F13;&#x5B58;&#x7ED3;&#x679C;&#xFF0C;&#x4F18;&#x5316;&#x6027;&#x80FD;(&#x591A;&#x6B21;&#x8C03;&#x7528;&#x76F4;&#x63A5;&#x4ECE;&#x7F13;&#x5B58;&#x4E2D;&#x83B7;&#x53D6;&#x7ED3;&#x679C;)&#x3002;</li>
+</ul>
+<pre><code class="lang-javaScript"><span class="hljs-comment">// &#x7F13;&#x5B58;&#x7ED3;&#x679C;</span>
+
+<span class="hljs-comment">// lodash&#x7684;&#x8BB0;&#x5FC6;&#x51FD;&#x6570;</span>
+<span class="hljs-keyword">const</span> _ = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;lodash&apos;</span>);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getArea</span>(<span class="hljs-params">r</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.PI * r * r;
+}
+
+<span class="hljs-comment">// &#x501F;&#x52A9;lodash&#x4E2D;&#x7684;memoize&#x6765;&#x7F13;&#x5B58;&#x7ED3;&#x679C;</span>
+<span class="hljs-keyword">const</span> getAreaWithMemory = _.memoize(getArea);
+
+<span class="hljs-built_in">console</span>.info(getAreaWithMemory(<span class="hljs-number">4</span>));
+<span class="hljs-built_in">console</span>.info(getAreaWithMemory(<span class="hljs-number">4</span>));
+<span class="hljs-built_in">console</span>.info(getAreaWithMemory(<span class="hljs-number">4</span>));
+<span class="hljs-built_in">console</span>.info(getAreaWithMemory(<span class="hljs-number">4</span>));
+
+<span class="hljs-comment">// &#x591A;&#x6B21;&#x8C03;&#x7528;&#x4F1A;&#x7F13;&#x5B58;&#x7B2C;&#x4E00;&#x6B21;&#x8C03;&#x7528;&#x7684;&#x7ED3;&#x679C;,&#x5982;&#x679C;&#x4F20;&#x5165;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;, &#x6216;&#x8005;&#x5728;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x6709;&#x4E00;&#x4E2A;&#x6253;&#x5370;&#x8BED;&#x53E5;&#xFF0C;&#x5C31;&#x4F1A;&#x53D1;&#x73B0;&#xFF0C;&#x51FD;&#x6570;&#x53EA;&#x6267;&#x884C;&#x4E86;&#x4E00;&#x6B21;&#xFF0C;&#x5176;&#x4F59;&#x65F6;&#x5019;&#xFF0C;&#x90FD;&#x662F;&#x76F4;&#x63A5;&#x53D6;&#x5F97;&#x7F13;&#x5B58;</span>
+
+<span class="hljs-comment">// &#x6A21;&#x62DF;memoize&#x51FD;&#x6570;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">memoize</span>(<span class="hljs-params">fn</span>) </span>{
+    <span class="hljs-keyword">let</span> cache = {};
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">let</span> key = <span class="hljs-built_in">JSON</span>.stringify(<span class="hljs-built_in">Array</span>.prototype.slice.call(<span class="hljs-built_in">arguments</span>));
+        <span class="hljs-keyword">if</span> (!cache[key]) {
+            cache[key] = fn.apply(fn, <span class="hljs-built_in">JSON</span>.parse(key));
+        }
+        <span class="hljs-keyword">return</span> cache[key];
+    }
+}
+<span class="hljs-comment">// &#x6709;&#x70B9;&#x7C7B;&#x4F3C;</span>
+</code></pre>
+<ul>
+<li>&#x53EF;&#x6D4B;&#x8BD5;: &#x7EAF;&#x51FD;&#x6570;&#x8BA9;&#x6D4B;&#x8BD5;&#x66F4;&#x65B9;&#x4FBF;</li>
+<li>&#x5E76;&#x884C;&#x5904;&#x7406;:<ul>
+<li>&#x591A;&#x7EBF;&#x7A0B;&#x73AF;&#x5883;&#x4E0B;, &#x5E76;&#x884C;&#x64CD;&#x4F5C;&#x5171;&#x4EAB;&#x7684;&#x5185;&#x5B58;&#x6570;&#x636E;&#x5F88;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x610F;&#x5916;&#x7684;&#x60C5;&#x51B5;</li>
+<li>&#x7EAF;&#x51FD;&#x6570;&#x4E0D;&#x9700;&#x8981;&#x8BBF;&#x95EE;&#x5171;&#x4EAB;&#x7684;&#x5185;&#x5B58;&#x6570;&#x636E;, &#x6240;&#x4EE5;&#x5728;&#x5E76;&#x884C;&#x73AF;&#x5883;&#x4E0B;&#x53EF;&#x4EE5;&#x4EFB;&#x610F;&#x8FD0;&#x884C;&#x7EAF;&#x51FD;&#x6570;(web Worker&#x53EF;&#x4EE5;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E0B;&#x6253;&#x5F00;&#x591A;&#x4E2A;&#x5B50;&#x7EBF;&#x7A0B;, &#x4F46;&#x4E0D;&#x80FD;&#x64CD;&#x4F5C;dom)</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x526F;&#x4F5C;&#x7528;">&#x526F;&#x4F5C;&#x7528;</h3>
+<pre><code class="lang-javaScript"><span class="hljs-comment">// &#x4E0D;&#x7EAF;&#x7684;&#x51FD;&#x6570;</span>
+<span class="hljs-keyword">let</span> mini = <span class="hljs-number">18</span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkAge</span>(<span class="hljs-params">age</span>) </span>{
+    <span class="hljs-keyword">return</span> age &gt;= mimi;
+}
+
+<span class="hljs-comment">//&#x53EF;&#x4EE5;&#x6539;&#x6210;&#x7EAF;&#x7684;, &#x5C31;&#x662F;&#x628A;mini&#x62FF;&#x8FDB;&#x53BB;&#x4F5C;&#x4E3A;&#x5C40;&#x90E8;&#x53D8;&#x91CF;, &#x4F46;&#x662F;&#x8FD9;&#x4E00;&#x6709;&#x786C;&#x7F16;&#x7801;, &#x540E;&#x7EED;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x67EF;&#x91CC;&#x5316;&#x89E3;&#x51B3;&#x3002;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkAge2</span> (<span class="hljs-params">age</span>) </span>{
+    <span class="hljs-keyword">let</span> mini = <span class="hljs-number">18</span>;
+    <span class="hljs-keyword">return</span> age &gt;= mini;
+}
+</code></pre>
+<p>&#x6240;&#x4EE5;&#xFF0C;&#x526F;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x7EAF;&#x51FD;&#x6570;&#x8F93;&#x5165;&#x76F8;&#x540C;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x503C;&#x53EF;&#x80FD;&#x4E0D;&#x76F8;&#x540C;&#x3002;</p>
+<p>&#x4E5F;&#x5C31;&#x662F;&#x8BA9;&#x51FD;&#x6570;&#x53D8;&#x5F97;&#x4E0D;&#x7EAF;&#xFF0C;&#x6BD4;&#x5982;&#x7B2C;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#x7684;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x3002;</p>
+<p>&#x65E0;&#x8BBA;&#x5982;&#x4F55;&#xFF0C;&#x526F;&#x4F5C;&#x7528;&#x7684;&#x6765;&#x6E90;&#x5C31;&#x662F;&#x5916;&#x90E8;&#x4EA4;&#x4E92;&#x3002;</p>
+<p>&#x526F;&#x4F5C;&#x7528;&#x4E0D;&#x5229;&#x4E8E;&#x7A0B;&#x5E8F;&#x6269;&#x5C55;&#x548C;&#x53EF;&#x91CD;&#x7528;&#x6027;&#xFF0C;&#x540C;&#x65F6;&#x526F;&#x4F5C;&#x7528;&#x4F1A;&#x7ED9;&#x7A0B;&#x5E8F;&#x5E26;&#x6765;&#x5B89;&#x5168;&#x9690;&#x60A3;&#xFF0C;&#x7ED9;&#x7A0B;&#x5E8F;&#x5E26;&#x6765;&#x4E0D;&#x786E;&#x5B9A;&#x6027;&#x3002;</p>
+<p>&#x4E0D;&#x53EF;&#x80FD;&#x5B8C;&#x5168;&#x7981;&#x6B62;&#x526F;&#x4F5C;&#x7528;&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x5C3D;&#x53EF;&#x80FD;&#x63A7;&#x5236;&#x4ED6;&#x4EEC;&#x3002;</p>
+<h3 id="&#x67EF;&#x91CC;&#x5316;haskell-brooks-curry">&#x67EF;&#x91CC;&#x5316;(Haskell Brooks Curry)</h3>
+<p>&#x4EBA;&#x7684;&#x540D;&#x5B57;&#x547D;&#x540D;&#xFF0C;&#x662F;&#x8FD9;&#x4E2A;&#x6570;&#x5B66;&#x5BB6;&#x521B;&#x9020;&#x7684;&#x3002;</p>
+<p>&#x6982;&#x5FF5;&#xFF1A; &#x591A;&#x53C2;&#x6570;&#x51FD;&#x6570;&#x5408;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x63A5;&#x6536;&#x5269;&#x4F59;&#x53C2;&#x6570;&#x51FD;&#x6570;</p>
+<p>&#x8FD9;&#x4E00;&#x5B9A;&#x5236;&#x5316;&#x51FA;&#x6765;&#x7684;&#x51FD;&#x6570;, &#x5916;&#x90E8;&#x53C2;&#x6570;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x53D1;&#x751F;&#x6539;&#x53D8;</p>
+<p>&#x5982;&#x4E0B;: </p>
+<pre><code class="lang-javaScript"><span class="hljs-comment">// &#x539F;&#x51FD;&#x6570;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkAge</span>(<span class="hljs-params">min, age</span>) </span>{
+    <span class="hljs-keyword">return</span> age &gt;= min;
+}
+
+<span class="hljs-comment">// &#x67EF;&#x91CC;&#x5316;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkAge2</span> (<span class="hljs-params">min</span>) </span>{
+    <span class="hljs-keyword">return</span> age =&gt; age &gt;= min;
+}
+</code></pre>
+<h4 id="lodash&#x4E2D;&#x7684;&#x67EF;&#x91CC;&#x5316;&#x51FD;&#x6570;">lodash&#x4E2D;&#x7684;&#x67EF;&#x91CC;&#x5316;&#x51FD;&#x6570;</h4>
+<ul>
+<li>curry(func): &#x53EF;&#x4EE5;&#x5C06;&#x4EFB;&#x610F;&#x591A;&#x53C2;&#x6570;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x67EF;&#x91CC;&#x5316;&#xFF0C;&#x8F6C;&#x5316;&#x4E3A;&#x66F4;&#x5C11;&#x53C2;&#x6570;&#x7684;&#x51FD;&#x6570;(&#x53EA;&#x8981;&#x4F20;&#x5165;&#x90E8;&#x5206;&#x53C2;&#x6570;&#xFF0C;&#x4ED6;&#x5C31;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x63A5;&#x6536;&#x5269;&#x4F59;&#x53C2;&#x6570;&#x7684;&#x51FD;&#x6570;)</li>
+</ul>
+<p>&#x4F7F;&#x7528;:</p>
+<pre><code class="lang-javaScript"><span class="hljs-keyword">const</span> _ = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;lodash&quot;</span>);
+
+<span class="hljs-keyword">const</span> getSum = (x, y, z) =&gt; x + y + z;
+
+<span class="hljs-keyword">const</span> getSumCurry = _.curry(getSum);
+
+<span class="hljs-built_in">console</span>.info(getSumCurry(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)); <span class="hljs-comment">// 6</span>
+<span class="hljs-built_in">console</span>.info(getSumCurry(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)(<span class="hljs-number">3</span>)); <span class="hljs-comment">// 6</span>
+<span class="hljs-built_in">console</span>.info(getSumCurry(<span class="hljs-number">1</span>)(<span class="hljs-number">2</span>)(<span class="hljs-number">3</span>)); <span class="hljs-comment">// 6</span>
+<span class="hljs-built_in">console</span>.info(getSumCurry(<span class="hljs-number">1</span>)(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)); <span class="hljs-comment">// 6</span>
+
+<span class="hljs-comment">// &#x67EF;&#x91CC;&#x5316;&#x6848;&#x4F8B;</span>
+<span class="hljs-comment">// &quot;&quot;.match(/\s+/g); // &#x5339;&#x914D;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x7A7A;&#x767D;</span>
+<span class="hljs-comment">// &quot;&quot;.match(/\d+/g); // &#x5339;&#x914D;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x6570;&#x5B57;</span>
+
+
+<span class="hljs-comment">// &#x7531;&#x4E8E;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x4F1A;&#x7ECF;&#x5E38;&#x91CD;&#x590D;&#xFF0C;&#x56E0;&#x6B64;&#x9700;&#x8981;&#x67EF;&#x91CC;&#x5316;&#x5904;&#x7406;, &#x5B9A;&#x5236;&#x5316;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x56FA;&#x5B9A;&#x7684;&#x6B63;&#x5219;&#x7684;&#x7EAF;&#x51FD;&#x6570;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">match</span>(<span class="hljs-params">reg, str</span>) </span>{
+    <span class="hljs-keyword">return</span> str.match(reg)
+}
+
+<span class="hljs-keyword">const</span> match = _.curry((reg, str) =&gt; str.match(reg));
+
+<span class="hljs-comment">// &#x5224;&#x65AD;&#x7A7A;&#x767D;&#x5B57;&#x7B26;</span>
+<span class="hljs-keyword">const</span> haveSpace = match(<span class="hljs-regexp">/\s+/g</span>);
+<span class="hljs-keyword">const</span> haveNum = match(<span class="hljs-regexp">/\d+/g</span>);
+
+<span class="hljs-built_in">console</span>.info(haveSpace(<span class="hljs-string">&quot;hello world&quot;</span>)); <span class="hljs-comment">// [&apos; &apos;]</span>
+<span class="hljs-built_in">console</span>.info(haveSpace(<span class="hljs-string">&quot;helloworld&quot;</span>)); <span class="hljs-comment">// null</span>
+<span class="hljs-built_in">console</span>.info(haveNum(<span class="hljs-string">&quot;1asd&quot;</span>)); <span class="hljs-comment">// [1]</span>
+
+<span class="hljs-comment">// &#x5B9A;&#x5236;&#x5316;&#x6570;&#x7EC4;&#x8FC7;&#x6EE4;</span>
+<span class="hljs-keyword">const</span> filter = _.curry((fn, arr) =&gt; arr.filter(fn));
+<span class="hljs-keyword">const</span> getSpace = filter(haveSpace); <span class="hljs-comment">// &#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x8FC7;&#x6EE4;&#x6CA1;&#x6709;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#x7684;&#x6570;&#x7EC4;&#x9879;</span>
+</code></pre>
+<h4 id="curry&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x539F;&#x7406;">curry&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x539F;&#x7406;</h4>
+<pre><code class="lang-javaScript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">curry</span>(<span class="hljs-params">fn</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">curriedFn</span>(<span class="hljs-params">...args</span>) </span>{
+        <span class="hljs-comment">// &#x5224;&#x65AD;&#x5B9E;&#x53C2;&#x548C;&#x5F62;&#x53C2;&#x7684;&#x4E2A;&#x6570;</span>
+        <span class="hljs-keyword">if</span> (args.length &lt; fn.length) {
+            <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+                <span class="hljs-keyword">return</span> curriedFn(...args.concat(<span class="hljs-built_in">Array</span>.prototype.slice.call(<span class="hljs-built_in">arguments</span>)));
+            }
+        }
+        <span class="hljs-keyword">return</span> fn(...args);
+    }   
+}
+
+<span class="hljs-keyword">const</span> getSum = (a, b, c) =&gt; a + b + c;
+
+<span class="hljs-keyword">const</span> curried = curry(getSum);
+
+<span class="hljs-comment">// curried&#x5B9E;&#x9645;&#x4E0A;&#x5C31;&#x662F;&#x7B2C;&#x4E00;&#x6B21;&#x6267;&#x884C;curry, &#x4F20;&#x5165;&#x7684;fn&#x5C31;&#x662F;getSum, &#x8FD4;&#x56DE;&#x7684;&#x5C31;&#x662F;&#x7B2C;&#x4E00;&#x5C42;&#x7684;curriedFn</span>
+<span class="hljs-comment">// &#x5F53;&#x6267;&#x884C;curried(1,2)&#x7684;&#x65F6;, &#x5C31;&#x4F1A;&#x8FDB;&#x5165;&#x5224;&#x65AD;&#xFF0C;&#x6B64;&#x65F6;args.length&#x662F;2 (1,2&#x4E24;&#x4E2A;&#x53C2;&#x6570;), fn.length&#x662F;3&#xFF0C;&#x8FD9;&#x4E2A;&#x662F;&#x56FA;&#x5B9A;&#x4E0D;&#x53D8;&#x7684;, &#x56E0;&#x6B64;&#x5C31;&#x8FD4;&#x56DE;&#x4E86;&#x5185;&#x90E8;&#x7684;function, &#x5F53;&#x5185;&#x90E8;function&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;, &#x5C31;&#x4F1A;&#x5C06;&#x7B2C;&#x4E8C;&#x6B21;&#x7684;3&#x4F20;&#x5165;&#x5176;&#x4E2D;, &#x7136;&#x540E;&#x5408;&#x5E76;&#x4E4B;&#x540E;&#x5C31;&#x662F;3&#x4E2A;&#x957F;&#x5EA6;&#xFF0C;&#x8D70;&#x5230;&#x5916;&#x90E8;&#x7684;fn(...args)&#x4E2D;</span>
+
+<span class="hljs-comment">// &#x5982;&#x679C;&#x662F;&#x5206;&#x5F00;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x4F20;&#x9012;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x662F;&#x5206;&#x4E09;&#x6B21;&#x4E86;&#x8D70;&#x4E86;&#x3002;</span>
+
+<span class="hljs-comment">// &#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x9012;&#x5F52;&#x4E0D;&#x505C;&#x7684;&#x5408;&#x5E76;&#x53C2;&#x6570;, &#x6765;&#x8FBE;&#x5230;&#x5B9A;&#x5236;&#x5316;&#x67EF;&#x91CC;&#x5316;&#x51FD;&#x6570;&#x7684;&#x76EE;&#x7684;</span>
+
+<span class="hljs-comment">// &#x5999;&#x554A;</span>
+
+<span class="hljs-built_in">console</span>.info(curried(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)(<span class="hljs-number">3</span>)); <span class="hljs-comment">// 6</span>
+</code></pre>
+<h3 id="&#x67EF;&#x91CC;&#x5316;&#x603B;&#x7ED3;">&#x67EF;&#x91CC;&#x5316;&#x603B;&#x7ED3;</h3>
+<ul>
+<li>&#x67EF;&#x91CC;&#x5316;&#x53EF;&#x4EE5;&#x8BA9;&#x6211;&#x7ED9;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4F20;&#x9012;&#x8F83;&#x5C11;&#x7684;&#x53C2;&#x6570;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x5DF2;&#x7ECF;&#x8BB0;&#x4F4F;&#x4E86;&#x67D0;&#x4E9B;&#x56FA;&#x5B9A;&#x53C2;&#x6570;&#x7684;&#x65B0;&#x51FD;&#x6570;</li>
+<li>&#x8FD9;&#x662F;&#x4E00;&#x79CD;&#x5BF9;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x7684;&quot;&#x7F13;&#x5B58;&quot;</li>
+<li>&#x8BA9;&#x51FD;&#x6570;&#x53D8;&#x5F97;&#x66F4;&#x7075;&#x6D3B;, &#x8BA9;&#x51FD;&#x6570;&#x7684;&#x7C92;&#x5EA6;&#x66F4;&#x5C0F;</li>
+<li>&#x53EF;&#x4EE5;&#x628A;&#x591A;&#x53C2;&#x6570;&#x51FD;&#x6570;(&#x591A;&#x5143;&#x51FD;&#x6570;)&#x8F6C;&#x6362;&#x4E3A;&#x4E00;&#x5143;&#x51FD;&#x6570;(&#x6700;&#x7EC8;), &#x53EF;&#x4EE5;&#x7EC4;&#x5408;&#x4F7F;&#x7528;&#x51FD;&#x6570;&#x4EA7;&#x751F;&#x5F3A;&#x5927;&#x7684;&#x529F;&#x80FD;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1.html" class="navigation navigation-prev " aria-label="Previous page: 函数式编程起始">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="3.html" class="navigation navigation-next " aria-label="Next page: 函数组合">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"纯函数","level":"1.2.2","depth":2,"next":{"title":"函数组合","level":"1.2.3","depth":2,"path":"part1/3.md","ref":"part1/3.md","articles":[]},"previous":{"title":"函数式编程起始","level":"1.2.1","depth":2,"path":"part1/1.md","ref":"part1/1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters"],"pluginsConfig":{"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"part1/2.md","mtime":"2021-04-16T02:08:28.390Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-16T18:00:34.701Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
