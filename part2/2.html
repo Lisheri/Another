@@ -280,6 +280,9 @@ pending =&gt; rejected
 <li>then&#x6210;&#x529F;&#x56DE;&#x8C03;&#x6709;&#x4E00;&#x4E2A;&#x53C2;&#x6570;, &#x8868;&#x793A;&#x6210;&#x529F;&#x7684;&#x503C;, &#x5931;&#x8D25;&#x540E;&#x6709;&#x4E00;&#x4E2A;&#x53C2;&#x6570;, &#x8868;&#x793A;&#x5931;&#x8D25;&#x7684;&#x539F;&#x56E0;</li>
 <li>promise&#x7684;then&#x65B9;&#x6CD5;&#x662F;&#x591A;&#x6B21;&#x8C03;&#x7528;&#x7684;</li>
 <li>promise&#x7684;then&#x5E94;&#x8BE5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684;promise</li>
+<li>promise.all&#x4F20;&#x5165;&#x4E00;&#x7EC4;&#x6570;&#x7EC4;, &#x5982;&#x679C;&#x5168;&#x90E8;&#x6210;&#x529F;, &#x5219;&#x6309;&#x987A;&#x5E8F;(&#x6570;&#x7EC4;&#x987A;&#x5E8F;)&#x8FD4;&#x56DE;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x6570;&#x7EC4;, &#x5982;&#x679C;&#x6709;&#x4E00;&#x4E2A;&#x5931;&#x8D25;, &#x5219;&#x8FD4;&#x56DE;&#x5931;&#x8D25;&#x539F;&#x56E0;</li>
+<li>promise.race&#x4F20;&#x5165;&#x4E00;&#x7EC4;&#x6570;&#x7EC4;, &#x5176;&#x4E2D;&#x6700;&#x5148;&#x6267;&#x884C;&#x5B8C;&#x7684;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;, &#x65E0;&#x8BBA;&#x5BF9;&#x9519;</li>
+<li>promise.allsettled&#x4F20;&#x5165;&#x4E00;&#x7EC4;&#x6570;&#x7EC4;, &#x65E0;&#x72B6;&#x6001;&#x8FD4;&#x56DE;&#x6267;&#x884C;&#x7ED3;&#x679C;, &#x65E0;&#x8BBA;&#x5BF9;&#x9519;, &#x90FD;&#x88C5;&#x5728;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x91CC;&#x9762;, &#x6BCF;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x6210;&#x5458;&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x72B6;&#x6001;</li>
 </ol>
 </blockquote>
 <pre><code class="lang-javaScript"><span class="hljs-keyword">const</span> PENDING = <span class="hljs-string">&quot;pending&quot;</span>; <span class="hljs-comment">// &#x8FDB;&#x884C;&#x4E2D;</span>
@@ -439,6 +442,64 @@ pending =&gt; rejected
         })
     }
 
+    <span class="hljs-keyword">static</span> race(promiseAll) {
+        <span class="hljs-keyword">let</span> res = <span class="hljs-literal">undefined</span>;
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addData</span> (<span class="hljs-params">value, resolve</span>) </span>{
+            res = value;
+            resolve(res)
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; promiseAll.length; i++) {
+                <span class="hljs-keyword">const</span> current = promiseAll[i]
+                <span class="hljs-keyword">if</span> (current <span class="hljs-keyword">instanceof</span> MyPromise) {
+                    current.then(value =&gt; addData(value, resolve), err =&gt; {
+                        reject(err);
+                    })
+                } <span class="hljs-keyword">else</span> {
+                    addData(current, resolve);
+                }
+            }
+        })
+    }
+
+    <span class="hljs-keyword">static</span> allSettled(promiseALl) {
+        <span class="hljs-keyword">let</span> res = [];
+        <span class="hljs-keyword">let</span> index = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">let</span> addData = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">key, value, resolve, status</span>) </span>{
+            <span class="hljs-keyword">if</span> (status === RESOLVED) {
+                res[key] = {
+                    status: <span class="hljs-string">&apos;fulfilled&apos;</span>,
+                    value: value
+                }
+            } <span class="hljs-keyword">else</span> {
+                res[key] = {
+                    status: <span class="hljs-string">&apos;rejected&apos;</span>,
+                    reason: value
+                }
+            }
+            index++;
+            <span class="hljs-keyword">if</span> (index === promiseArr.length) {
+                <span class="hljs-comment">// * &#x8BF4;&#x660E;&#x6267;&#x884C;&#x5B8C;&#x4E86;, &#x6B64;&#x65F6;&#x6267;&#x884C;resolve</span>
+                resolve(res);
+            }
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> MyPromise((resolve, reject) =&gt; {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; promiseArr.length; i++) {
+                <span class="hljs-keyword">const</span> current = promiseArr[i];
+                <span class="hljs-keyword">if</span> (current <span class="hljs-keyword">instanceof</span> MyPromise) {
+                    <span class="hljs-comment">// * &#x5F53;&#x524D;&#x503C;&#x662F;promise</span>
+                    current.then(value =&gt; addData(i, value, resolve, RESOLVED), err =&gt; {
+                        <span class="hljs-comment">// * &#x6709;&#x9519;&#x8BEF;&#x4E5F;&#x6DFB;&#x52A0;&#x5230;&#x6570;&#x7EC4;&#x4E2D;, &#x65E0;&#x72B6;&#x6001;&#x8FD4;&#x56DE;&#x4E00;&#x7EC4;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x6570;&#x7EC4;</span>
+                        addData(i, value, resolve, REJECTED);
+                    });
+                } <span class="hljs-keyword">else</span> {
+                    <span class="hljs-comment">// * &#x666E;&#x901A;&#x503C;</span>
+                    addData(i, current, resolve, RESOLVED);
+                }
+            }
+        })
+    }
+
     <span class="hljs-keyword">static</span> resolve (value) {
         <span class="hljs-keyword">if</span> (value <span class="hljs-keyword">instanceof</span> MyPromise) <span class="hljs-keyword">return</span>;
         <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> MyPromise(resolve =&gt; resolve(value));
@@ -498,7 +559,7 @@ pending =&gt; rejected
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"手写Promise","level":"1.3.2","depth":2,"previous":{"title":"JS异步编程","level":"1.3.1","depth":2,"path":"part2/1.md","ref":"part2/1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters"],"pluginsConfig":{"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"part2/2.md","mtime":"2021-04-16T17:56:10.087Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-16T18:00:34.701Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"手写Promise","level":"1.3.2","depth":2,"previous":{"title":"JS异步编程","level":"1.3.1","depth":2,"path":"part2/1.md","ref":"part2/1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters"],"pluginsConfig":{"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"part2/2.md","mtime":"2021-04-19T02:59:34.585Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-19T03:00:42.260Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
