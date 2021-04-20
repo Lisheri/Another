@@ -1,0 +1,735 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Proxy与Reflect · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="9.html" />
+    
+    
+    <link rel="prev" href="7.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    函数编程范式
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../part1/1.html">
+            
+                <a href="../part1/1.html">
+            
+                    
+                    函数式编程起始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../part1/2.html">
+            
+                <a href="../part1/2.html">
+            
+                    
+                    纯函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../part1/3.html">
+            
+                <a href="../part1/3.html">
+            
+                    
+                    函数组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../part1/4.html">
+            
+                <a href="../part1/4.html">
+            
+                    
+                    函子
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    JS异步编程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../part2/1.html">
+            
+                <a href="../part2/1.html">
+            
+                    
+                    JS异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../part2/2.html">
+            
+                <a href="../part2/2.html">
+            
+                    
+                    手写Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    ECMAScript2015新特性
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="1.html">
+            
+                <a href="1.html">
+            
+                    
+                    ES描述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="2.html">
+            
+                <a href="2.html">
+            
+                    
+                    ES2015
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="3.html">
+            
+                <a href="3.html">
+            
+                    
+                    块级作用域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="4.html">
+            
+                <a href="4.html">
+            
+                    
+                    解构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="5.html">
+            
+                <a href="5.html">
+            
+                    
+                    字符串扩充
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="6.html">
+            
+                <a href="6.html">
+            
+                    
+                    参数扩充和箭头函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="7.html">
+            
+                <a href="7.html">
+            
+                    
+                    对象扩充
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.8" data-path="8.html">
+            
+                <a href="8.html">
+            
+                    
+                    Proxy与Reflect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="9.html">
+            
+                <a href="9.html">
+            
+                    
+                    class和继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="10.html">
+            
+                <a href="10.html">
+            
+                    
+                    新增数据结构和类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="11.html">
+            
+                <a href="11.html">
+            
+                    
+                    循环与迭代器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="12.html">
+            
+                <a href="12.html">
+            
+                    
+                    生成器和Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="13.html">
+            
+                <a href="13.html">
+            
+                    
+                    ES2016
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="14.html">
+            
+                <a href="14.html">
+            
+                    
+                    ES2017
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="15.html">
+            
+                <a href="15.html">
+            
+                    
+                    ESModule
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    TypeScript
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../part4/1.html">
+            
+                <a href="../part4/1.html">
+            
+                    
+                    强类型和弱类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../part4/2.html">
+            
+                <a href="../part4/2.html">
+            
+                    
+                    JS类型体统特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../part4/3.html">
+            
+                <a href="../part4/3.html">
+            
+                    
+                    Flow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../part4/4.html">
+            
+                <a href="../part4/4.html">
+            
+                    
+                    typeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Proxy与Reflect</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="proxy&#x4E0E;reflect">Proxy&#x4E0E;Reflect</h1>
+<h2 id="proxy">Proxy</h2>
+<p>&#x5728;ES2015&#x4E4B;&#x524D;&#x8981;&#x4E3A;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x505A;&#x6269;&#x5C55;, &#x9700;&#x8981;&#x4F7F;&#x7528; <code>Object.defineProperty()</code>, Vue3&#x4E4B;&#x524D;&#x90FD;&#x662F;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x505A;&#x54CD;&#x5E94;&#x5F0F; </p>
+<p>&#x4F46;&#x662F;ES2015&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;Proxy&#x4E3A;&#x5BF9;&#x8C61;&#x505A;&#x4EE3;&#x7406;, vue3&#x4EE5;&#x540E;&#x4E5F;&#x662F;&#x4F7F;&#x7528;proxy&#x505A;&#x54CD;&#x5E94;</p>
+<pre><code class="lang-javaScript"><span class="hljs-keyword">const</span> person = {
+    name: <span class="hljs-string">&apos;zce&apos;</span>,
+    age: <span class="hljs-number">20</span>
+}
+
+<span class="hljs-keyword">const</span> personProxy = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Proxy</span>(person, {
+    get (target, property) {
+        <span class="hljs-comment">// console.info(target, property);</span>
+        <span class="hljs-comment">// return 100; // &#x8FD9;&#x4E00;&#x6BCF;&#x4E00;&#x6B21;&#x8BBF;&#x95EE;&#x90FD;&#x662F;100</span>
+        <span class="hljs-keyword">return</span> property <span class="hljs-keyword">in</span> target ? target[property] : <span class="hljs-string">&apos;defaultValue&apos;</span>;
+    },
+    set (target, property, val) {
+        <span class="hljs-comment">// &#x63A5;&#x6536;&#x4E09;&#x4E2A;&#x5BF9;&#x8C61;, &#x4E00;&#x822C;&#x7528;&#x4E8E;&#x5BF9;&#x6539;&#x53D8;&#x7684;&#x503C;&#x505A;&#x6821;&#x9A8C;</span>
+        <span class="hljs-keyword">if</span> (property === <span class="hljs-string">&apos;age&apos;</span> &amp;&amp; !number.isInteger(val)) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">TypeError</span>(<span class="hljs-string">&apos;&#x62A5;&#x9519;&apos;</span>);
+        }
+        target[property] = val;
+    }
+})
+</code></pre>
+<h3 id="proxy&#x6BD4;&#x8D77;objectdefineproperty&#x7684;&#x4F18;&#x52BF;">proxy&#x6BD4;&#x8D77;object.defineProperty&#x7684;&#x4F18;&#x52BF;</h3>
+<ol>
+<li>proxy&#x53EF;&#x4EE5;&#x76D1;&#x542C;&#x5230;&#x66F4;&#x591A;&#x7684;&#x5C5E;&#x6027;, &#x4E0D;&#x4EC5;&#x4EC5;&#x662F;&#x5BF9;&#x8C61;&#x7684;&#x8BFB;&#x5199;, &#x6BD4;&#x5982;delete&#x64CD;&#x4F5C;, &#x5BF9;&#x8C61;&#x4E2D;&#x65B9;&#x6CD5;&#x7684;&#x8C03;&#x7528;</li>
+</ol>
+<pre><code class="lang-javaScript"><span class="hljs-keyword">const</span> person = {
+    name: <span class="hljs-string">&apos;zs&apos;</span>,
+    age: <span class="hljs-number">20</span>
+}
+
+<span class="hljs-keyword">const</span> personProxy = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Proxy</span>(person, {
+    deleteProperty(target, property) {
+        <span class="hljs-comment">// delete&#x64CD;&#x4F5C;&#x65F6;&#x6267;&#x884C;, &#x63A5;&#x6536;&#x4EE3;&#x7406;&#x76EE;&#x6807;&#x5BF9;&#x8C61;&#x548C;&#x5220;&#x9664;&#x5C5E;&#x6027;&#x540D;&#x79F0;</span>
+        <span class="hljs-keyword">delete</span> target[property];
+    }
+})
+</code></pre>
+<p><img src="images/4431618820475_.pic_hd.jpg" alt="proxy&#x53EF;&#x4EE5;&#x4EE3;&#x7406;&#x7684;&#x5185;&#x5BB9;"></p>
+<ol>
+<li>&#x5BF9;&#x4E8E;&#x6570;&#x7EC4;&#x7684;&#x76D1;&#x89C6;</li>
+</ol>
+<p>&#x5728;&#x4EE5;&#x524D;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x91CD;&#x5199;&#x6570;&#x7EC4;&#x7684;&#x64CD;&#x4F5C;&#x65B9;&#x6CD5;, &#x6BD4;&#x5982;vue&#x4FEE;&#x6539;&#x4E86;8&#x4E2A;&#x6570;&#x7EC4;&#x65B9;&#x6CD5;&#xFF0C;&#x653E;&#x5728;&#x4E86;&#x6570;&#x7EC4;&#x539F;&#x578B;&#x94FE;&#x7684;&#x4E0A;&#x4E00;&#x5C42;(&#x65B0;&#x589E;&#x4E86;&#x4E00;&#x5C42;)</p>
+<pre><code class="lang-javaScript"><span class="hljs-keyword">const</span> list = [];
+<span class="hljs-keyword">const</span> listProxy = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Proxy</span>(list, {
+    set(target, property, value) {
+        target[property] = value;
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>; <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;true&#x8868;&#x793A;&#x8BBE;&#x7F6E;&#x6210;&#x529F;</span>
+    }
+})
+</code></pre>
+<ol>
+<li>proxy&#x662F;&#x4EE5;&#x975E;&#x4FB5;&#x5165;&#x7684;&#x65B9;&#x5F0F;&#x76D1;&#x7BA1;&#x6574;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x8BFB;&#x5199;</li>
+</ol>
+<p>&#x4F46;&#x662F;object.defineProperty&#x5FC5;&#x987B;&#x5BF9;&#x7279;&#x5B9A;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x6DFB;&#x52A0;&#x76D1;&#x542C;&#x3002;</p>
+<h2 id="reflect">Reflect</h2>
+<p>ES2015 &#x63D0;&#x4F9B;&#x7684;&#x4E00;&#x4E2A;&#x5168;&#x65B0;&#x7684;&#x5185;&#x7F6E;&#x5BF9;&#x8C61;, &#x5982;&#x679C;&#x6309;&#x7167;java, C++&#x8FD9;&#x79CD;&#x8BED;&#x8A00;&#x7684;&#x8BF4;&#x6CD5;&#xFF0C;&#x4ED6;&#x662F;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x7C7B;, &#x4E0D;&#x80FD;new&#x6784;&#x5EFA;&#x5B9E;&#x4F8B;, &#x53EA;&#x80FD;&#x901A;&#x8FC7;Reflect&#x53BB;&#x8C03;&#x7528;&#x7C7B;&#x7684;&#x6210;&#x5458;&#x65B9;&#x6CD5;</p>
+<p>&#x5728;JS&#x4E2D;Math&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x7C7B;</p>
+<p>&#x5185;&#x90E8;&#x5C01;&#x88C5;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x5BF9;&#x8C61;&#x7684;&#x5E95;&#x5C42;&#x64CD;&#x4F5C;, &#x5176;&#x4E2D;&#x6709;13&#x4E2A;, &#x539F;&#x672C;14&#x4E2A;, 1&#x4E2A;&#x5E9F;&#x5F03;</p>
+<p>Reflect&#x6210;&#x5458;&#x65B9;&#x6CD5;&#x5C31;&#x662F;Proxy&#x5904;&#x7406;&#x5BF9;&#x8C61;&#x7684;&#x9ED8;&#x8BA4;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x5982;&#x4E0B;:</p>
+<pre><code class="lang-javaScript"><span class="hljs-keyword">const</span> obj = {
+    name: <span class="hljs-string">&apos;zs&apos;</span>,
+    age: <span class="hljs-number">123</span>
+}
+
+<span class="hljs-keyword">const</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Proxy</span>(obj, {
+    <span class="hljs-comment">// * &#x50CF;&#x8FD9;&#x6837;, &#x5982;&#x679C;&#x6CA1;&#x6709;&#x6DFB;&#x52A0;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;, &#x5B83;&#x5185;&#x90E8;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x4F7F;&#x7528; Reflect&#x4E2D;&#x7684;&#x65B9;&#x6CD5;, &#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684;&#x65B9;&#x6CD5;&#x653E;&#x5165;&#x5176;&#x4E2D;</span>
+    <span class="hljs-comment">// &#x7B49;&#x540C;&#x4E8E;&#x6B64;</span>
+    get (target, property) {
+        <span class="hljs-comment">// * &#x56E0;&#x6B64;&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;, &#x6211;&#x4EEC;&#x5728;&#x4E4B;&#x524D;&#x5904;&#x7406;&#x9700;&#x8981;&#x7684;&#x76D1;&#x89C6;&#x903B;&#x8F91;, &#x6700;&#x540E;&#x901A;&#x8FC7;Reflect&#x53BB;&#x8FD4;&#x56DE;&#x76D1;&#x89C6;&#x7ED3;&#x679C;</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">Reflect</span>.get(target, property)
+    }
+});
+</code></pre>
+<h3 id="reflect&#x610F;&#x4E49;">Reflect&#x610F;&#x4E49;</h3>
+<blockquote>
+<p>&#x7EDF;&#x4E00;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x5957;&#x7528;&#x4E8E;&#x64CD;&#x4F5C;&#x5BF9;&#x8C61;&#x7684;API&#x3002;&#x5C31;&#x4E0D;&#x7528;&#x4E00;&#x4F1A;&#x513F;&#x4F7F;&#x7528;Object&#x4E0A;&#x7684;, &#x4E00;&#x4F1A;&#x513F;&#x4F7F;&#x7528;Array&#x4E0A;&#x7684;&#xFF0C; &#x4E00;&#x4F1A;&#x513F;&#x4F7F;&#x7528;&#x64CD;&#x4F5C;&#x7B26;</p>
+</blockquote>
+<pre><code class="lang-javaScript">    <span class="hljs-keyword">const</span> obj = {
+        name: <span class="hljs-string">&apos;zs&apos;</span>,
+        age: <span class="hljs-number">100</span>
+    }
+    <span class="hljs-built_in">console</span>.info(<span class="hljs-string">`name`</span> <span class="hljs-keyword">in</span> obj); <span class="hljs-comment">//&#x5224;&#x65AD;&#x5B58;&#x5728;</span>
+    <span class="hljs-built_in">console</span>.info(<span class="hljs-keyword">delete</span> obj.name); <span class="hljs-comment">// &#x5220;&#x9664;</span>
+    <span class="hljs-built_in">console</span>.info(<span class="hljs-built_in">Object</span>.keys(obj)); <span class="hljs-comment">// &#x904D;&#x5386;&#x975E;&#x539F;&#x578B;&#x94FE;&#x5C5E;&#x6027;</span>
+
+    <span class="hljs-comment">// &#x4F46;&#x662F;&#x4F7F;&#x7528;Reflect</span>
+    <span class="hljs-built_in">console</span>.info(<span class="hljs-built_in">Reflect</span>.has(<span class="hljs-string">&apos;name&apos;</span>, obj));
+    <span class="hljs-built_in">console</span>.info(<span class="hljs-built_in">Reflect</span>.deleteProperty(obj, <span class="hljs-string">`name`</span>));
+    <span class="hljs-built_in">console</span>.info(<span class="hljs-built_in">Reflect</span>.ownKeys(obj));
+</code></pre>
+<blockquote>
+<p>&#x4E3B;&#x8981;&#x5C31;&#x662F;ECMA&#x5E0C;&#x671B;&#x5728;&#x672A;&#x6765;, &#x5E9F;&#x5F03;&#x90A3;&#x4E9B;&#x5230;&#x5904;&#x5B58;&#x5728;&#x7684;&#x65B9;&#x6CD5;, &#x5168;&#x90E8;&#x8D70;Reflect</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="7.html" class="navigation navigation-prev " aria-label="Previous page: 对象扩充">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="9.html" class="navigation navigation-next " aria-label="Next page: class和继承">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Proxy与Reflect","level":"1.4.8","depth":2,"next":{"title":"class和继承","level":"1.4.9","depth":2,"path":"part3/9.md","ref":"part3/9.md","articles":[]},"previous":{"title":"对象扩充","level":"1.4.7","depth":2,"path":"part3/7.md","ref":"part3/7.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters"],"pluginsConfig":{"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"part3/8.md","mtime":"2021-04-20T06:15:39.656Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-20T08:57:25.488Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
