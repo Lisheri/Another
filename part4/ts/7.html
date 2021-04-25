@@ -1,0 +1,872 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>泛型和类型声明 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="6.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    函数编程范式
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../part1/1.html">
+            
+                <a href="../../part1/1.html">
+            
+                    
+                    函数式编程起始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../part1/2.html">
+            
+                <a href="../../part1/2.html">
+            
+                    
+                    纯函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../part1/3.html">
+            
+                <a href="../../part1/3.html">
+            
+                    
+                    函数组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../part1/4.html">
+            
+                <a href="../../part1/4.html">
+            
+                    
+                    函子
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    JS异步编程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../part2/1.html">
+            
+                <a href="../../part2/1.html">
+            
+                    
+                    JS异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../part2/2.html">
+            
+                <a href="../../part2/2.html">
+            
+                    
+                    手写Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    ECMAScript2015新特性
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../part3/1.html">
+            
+                <a href="../../part3/1.html">
+            
+                    
+                    ES描述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../part3/2.html">
+            
+                <a href="../../part3/2.html">
+            
+                    
+                    ES2015
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../part3/3.html">
+            
+                <a href="../../part3/3.html">
+            
+                    
+                    块级作用域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../part3/4.html">
+            
+                <a href="../../part3/4.html">
+            
+                    
+                    解构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../part3/5.html">
+            
+                <a href="../../part3/5.html">
+            
+                    
+                    字符串扩充
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../part3/6.html">
+            
+                <a href="../../part3/6.html">
+            
+                    
+                    参数扩充和箭头函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../part3/7.html">
+            
+                <a href="../../part3/7.html">
+            
+                    
+                    对象扩充
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../../part3/8.html">
+            
+                <a href="../../part3/8.html">
+            
+                    
+                    Proxy与Reflect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../../part3/9.html">
+            
+                <a href="../../part3/9.html">
+            
+                    
+                    class和继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../../part3/10.html">
+            
+                <a href="../../part3/10.html">
+            
+                    
+                    新增数据结构和类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../../part3/11.html">
+            
+                <a href="../../part3/11.html">
+            
+                    
+                    循环与迭代器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../../part3/12.html">
+            
+                <a href="../../part3/12.html">
+            
+                    
+                    生成器和Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../../part3/13.html">
+            
+                <a href="../../part3/13.html">
+            
+                    
+                    ES2016
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../../part3/14.html">
+            
+                <a href="../../part3/14.html">
+            
+                    
+                    ES2017
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../../part3/15.html">
+            
+                <a href="../../part3/15.html">
+            
+                    
+                    ESModule
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    TypeScript
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../1.html">
+            
+                <a href="../1.html">
+            
+                    
+                    强类型和弱类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../2.html">
+            
+                <a href="../2.html">
+            
+                    
+                    JS类型体统特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../3.html">
+            
+                <a href="../3.html">
+            
+                    
+                    Flow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" >
+            
+                <span>
+            
+                    
+                    typeScript
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="1.html">
+            
+                <a href="1.html">
+            
+                    
+                    typeScript 上手
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="2.html">
+            
+                <a href="2.html">
+            
+                    
+                    ts原始类型和部分问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.3" data-path="3.html">
+            
+                <a href="3.html">
+            
+                    
+                    类型增强
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.4" data-path="4.html">
+            
+                <a href="4.html">
+            
+                    
+                    类型推断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.5" data-path="5.html">
+            
+                <a href="5.html">
+            
+                    
+                    interface(接口)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.6" data-path="6.html">
+            
+                <a href="6.html">
+            
+                    
+                    类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.4.7" data-path="7.html">
+            
+                <a href="7.html">
+            
+                    
+                    泛型和类型声明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" >
+            
+                <span>
+            
+                    
+                    js性能优化
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.1" data-path="../../part5/1.html">
+            
+                <a href="../../part5/1.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.2" data-path="../../part5/2.html">
+            
+                <a href="../../part5/2.html">
+            
+                    
+                    JS内存管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.3" data-path="../../part5/3.html">
+            
+                <a href="../../part5/3.html">
+            
+                    
+                    垃圾回收
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.4" data-path="../../part5/4.html">
+            
+                <a href="../../part5/4.html">
+            
+                    
+                    v8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.5" data-path="../../part5/5.html">
+            
+                <a href="../../part5/5.html">
+            
+                    
+                    js性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.6" data-path="../../part5/6.html">
+            
+                <a href="../../part5/6.html">
+            
+                    
+                    js代码优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.7" data-path="../../part5/7.html">
+            
+                <a href="../../part5/7.html">
+            
+                    
+                    js性能优化二
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >泛型和类型声明</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x6CDB;&#x578B;&#x548C;&#x7C7B;&#x578B;&#x58F0;&#x660E;">&#x6CDB;&#x578B;&#x548C;&#x7C7B;&#x578B;&#x58F0;&#x660E;</h1>
+<h2 id="&#x6CDB;&#x578B;">&#x6CDB;&#x578B;</h2>
+<p>&#x5728;&#x58F0;&#x660E;&#x51FD;&#x6570;&#x65F6;&#x4E0D;&#x6307;&#x5B9A;&#x5177;&#x4F53;&#x7C7B;&#x578B;, &#x8C03;&#x7528;&#x7684;&#x65F6;&#x5019;&#x518D;&#x53BB;&#x6307;&#x5B9A;</p>
+<blockquote>
+<p>&#x7531;&#x4E8E;&#x5F88;&#x591A;&#x65F6;&#x5019;&#x9700;&#x8981;&#x901A;&#x7528;&#x51FD;&#x6570;, &#x4F46;&#x662F;&#x9650;&#x5236;&#x6B7B;&#x53C2;&#x6570;&#x8FC7;&#x540E;, &#x51FD;&#x6570;&#x5C31;&#x4E0D;&#x591F;&#x901A;&#x7528;&#x4E86;, &#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5C06;&#x7C7B;&#x578B;&#x4E5F;&#x53D8;&#x6210;&#x4E00;&#x4E2A;&#x7EDF;&#x4E00;&#x7684;&#x53C2;&#x6570;</p>
+</blockquote>
+<p>&#x5982;&#x4E0B;:</p>
+<pre><code class="lang-typeScript">// &#x4F46;&#x662F;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x53EA;&#x80FD;&#x521B;&#x5EFA;&#x6570;&#x5B57;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x7EC4;, &#x4E0D;&#x80FD;&#x521B;&#x5EFA;string&#x7C7B;&#x578B;&#x7684;&#x6570;&#x7EC4;, &#x8FD9;&#x4E00;&#x5C31;&#x4E0D;&#x592A;&#x884C;&#x4E86;
+function createNumArr (lenght: number, vlaue: number): number[] {
+    return Array&lt;number&gt;(length).fill(value);
+}
+
+// &#x56E0;&#x6B64;&#x66F4;&#x5408;&#x7406;&#x7684;&#x529E;&#x6CD5;&#x5C31;&#x662F;&#x4F7F;&#x7528;&#x6CDB;&#x578B;, &#x5C31;&#x662F;&#x5C06;&#x7C7B;&#x578B;&#x4E5F;&#x53D8;&#x6210;&#x53C2;&#x6570;
+// &#x6CDB;&#x578B;&#x5C31;&#x662F;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x5C16;&#x62EC;&#x53F7;, &#x4E00;&#x822C;&#x4F7F;&#x7528;T&#x4EE3;&#x8868;&#x4E0D;&#x660E;&#x786E;&#x7684;&#x540D;&#x79F0;
+function createArr&lt;T&gt; (length: number, value: T): T[] {
+    // Array&#x662F;&#x4E00;&#x4E2A;&#x6CDB;&#x578B;&#x7C7B;, &#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x4F20;&#x9012;&#x6CDB;&#x578B;&#x53C2;&#x6570;, &#x8C03;&#x7528;&#x65F6;&#x518D;&#x53BB;&#x4F20;&#x9012;&#x5177;&#x4F53;&#x7C7B;&#x578B;, &#x4E0D;&#x6307;&#x5B9A;&#x6CDB;&#x578B;&#x5C31;&#x662F;&#x4E00;&#x4E2A;any&#x7C7B;&#x578B;&#x7684;&#x6570;&#x7EC4;
+    const arr = Array&lt;T&gt;(length).fill(value);
+    return arr;
+}
+
+const res = createArr&lt;string&gt;(3, &apos;foo&apos;);
+const numArr = createArr&lt;number&gt;(3, 100);
+</code></pre>
+<h2 id="&#x7C7B;&#x578B;&#x58F0;&#x660E;">&#x7C7B;&#x578B;&#x58F0;&#x660E;</h2>
+<p>&#x5B9E;&#x9645;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;, &#x4F7F;&#x7528;&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x6A21;&#x5757;, &#x4E0D;&#x4E00;&#x5B9A;&#x4F7F;&#x7528;ts&#x5199;&#x7684;, &#x56E0;&#x6B64;&#x4ED6;&#x4EEC;&#x53EF;&#x80FD;&#x6CA1;&#x6709;&#x7C7B;&#x578B;&#x6821;&#x9A8C;&#x3002;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x627E;&#x4E0D;&#x5230;&#x7C7B;&#x578B;&#x58F0;&#x660E;&#x7684;&#x6587;&#x4EF6;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;&#x4E5F;&#x4E0D;&#x4F1A;&#x6709;&#x4EFB;&#x4F55;&#x7684;&#x7C7B;&#x578B;&#x63D0;&#x793A;</p>
+<p>&#x56E0;&#x6B64;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x58F0;&#x660E;</p>
+<pre><code class="lang-typeScript"><span class="hljs-keyword">import</span> {camelCase} from <span class="hljs-string">&apos;lodash&apos;</span>;<span class="hljs-comment">// &#x4E00;&#x822C;&#x9F20;&#x6807;&#x653E;&#x4E0A;&#x53BB;, &#x5C31;&#x4F1A;&#x544A;&#x8BC9;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x53BB;&#x5B89;&#x88C5;&#x5BF9;&#x5E94;&#x5730;&#x7C7B;&#x578B;&#x58F0;&#x660E;&#x6A21;&#x5757;,  .d.ts&#x7ED3;&#x5C3E;, &#x4E13;&#x7528;&#x4E8E;&#x505A;&#x7C7B;&#x578B;&#x58F0;&#x660E;</span>
+
+<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">camelCase</span></span>;
+
+<span class="hljs-keyword">const</span> res = camelCase(<span class="hljs-string">&apos;hello android&apos;</span>);
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="6.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 类">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"泛型和类型声明","level":"1.5.4.7","depth":3,"next":{"title":"js性能优化","level":"1.5.5","depth":2,"ref":"","articles":[{"title":"概述","level":"1.5.5.1","depth":3,"path":"part5/1.md","ref":"part5/1.md","articles":[]},{"title":"JS内存管理","level":"1.5.5.2","depth":3,"path":"part5/2.md","ref":"part5/2.md","articles":[]},{"title":"垃圾回收","level":"1.5.5.3","depth":3,"path":"part5/3.md","ref":"part5/3.md","articles":[]},{"title":"v8","level":"1.5.5.4","depth":3,"path":"part5/4.md","ref":"part5/4.md","articles":[]},{"title":"js性能","level":"1.5.5.5","depth":3,"path":"part5/5.md","ref":"part5/5.md","articles":[]},{"title":"js代码优化","level":"1.5.5.6","depth":3,"path":"part5/6.md","ref":"part5/6.md","articles":[]},{"title":"js性能优化二","level":"1.5.5.7","depth":3,"path":"part5/7.md","ref":"part5/7.md","articles":[]}]},"previous":{"title":"类","level":"1.5.4.6","depth":3,"path":"part4/ts/6.md","ref":"part4/ts/6.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters"],"pluginsConfig":{"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"part4/ts/7.md","mtime":"2021-04-21T08:32:02.007Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-25T16:23:05.764Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

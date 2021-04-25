@@ -1,0 +1,1015 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>js性能优化二 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="6.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    函数编程范式
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../part1/1.html">
+            
+                <a href="../part1/1.html">
+            
+                    
+                    函数式编程起始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../part1/2.html">
+            
+                <a href="../part1/2.html">
+            
+                    
+                    纯函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../part1/3.html">
+            
+                <a href="../part1/3.html">
+            
+                    
+                    函数组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../part1/4.html">
+            
+                <a href="../part1/4.html">
+            
+                    
+                    函子
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    JS异步编程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../part2/1.html">
+            
+                <a href="../part2/1.html">
+            
+                    
+                    JS异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../part2/2.html">
+            
+                <a href="../part2/2.html">
+            
+                    
+                    手写Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    ECMAScript2015新特性
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../part3/1.html">
+            
+                <a href="../part3/1.html">
+            
+                    
+                    ES描述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../part3/2.html">
+            
+                <a href="../part3/2.html">
+            
+                    
+                    ES2015
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../part3/3.html">
+            
+                <a href="../part3/3.html">
+            
+                    
+                    块级作用域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../part3/4.html">
+            
+                <a href="../part3/4.html">
+            
+                    
+                    解构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../part3/5.html">
+            
+                <a href="../part3/5.html">
+            
+                    
+                    字符串扩充
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../part3/6.html">
+            
+                <a href="../part3/6.html">
+            
+                    
+                    参数扩充和箭头函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../part3/7.html">
+            
+                <a href="../part3/7.html">
+            
+                    
+                    对象扩充
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../part3/8.html">
+            
+                <a href="../part3/8.html">
+            
+                    
+                    Proxy与Reflect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../part3/9.html">
+            
+                <a href="../part3/9.html">
+            
+                    
+                    class和继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../part3/10.html">
+            
+                <a href="../part3/10.html">
+            
+                    
+                    新增数据结构和类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../part3/11.html">
+            
+                <a href="../part3/11.html">
+            
+                    
+                    循环与迭代器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../part3/12.html">
+            
+                <a href="../part3/12.html">
+            
+                    
+                    生成器和Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../part3/13.html">
+            
+                <a href="../part3/13.html">
+            
+                    
+                    ES2016
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../part3/14.html">
+            
+                <a href="../part3/14.html">
+            
+                    
+                    ES2017
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../part3/15.html">
+            
+                <a href="../part3/15.html">
+            
+                    
+                    ESModule
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    TypeScript
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../part4/1.html">
+            
+                <a href="../part4/1.html">
+            
+                    
+                    强类型和弱类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../part4/2.html">
+            
+                <a href="../part4/2.html">
+            
+                    
+                    JS类型体统特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../part4/3.html">
+            
+                <a href="../part4/3.html">
+            
+                    
+                    Flow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" >
+            
+                <span>
+            
+                    
+                    typeScript
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../part4/ts/1.html">
+            
+                <a href="../part4/ts/1.html">
+            
+                    
+                    typeScript 上手
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="../part4/ts/2.html">
+            
+                <a href="../part4/ts/2.html">
+            
+                    
+                    ts原始类型和部分问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.3" data-path="../part4/ts/3.html">
+            
+                <a href="../part4/ts/3.html">
+            
+                    
+                    类型增强
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.4" data-path="../part4/ts/4.html">
+            
+                <a href="../part4/ts/4.html">
+            
+                    
+                    类型推断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.5" data-path="../part4/ts/5.html">
+            
+                <a href="../part4/ts/5.html">
+            
+                    
+                    interface(接口)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.6" data-path="../part4/ts/6.html">
+            
+                <a href="../part4/ts/6.html">
+            
+                    
+                    类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.7" data-path="../part4/ts/7.html">
+            
+                <a href="../part4/ts/7.html">
+            
+                    
+                    泛型和类型声明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" >
+            
+                <span>
+            
+                    
+                    js性能优化
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.1" data-path="1.html">
+            
+                <a href="1.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.2" data-path="2.html">
+            
+                <a href="2.html">
+            
+                    
+                    JS内存管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.3" data-path="3.html">
+            
+                <a href="3.html">
+            
+                    
+                    垃圾回收
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.4" data-path="4.html">
+            
+                <a href="4.html">
+            
+                    
+                    v8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.5" data-path="5.html">
+            
+                <a href="5.html">
+            
+                    
+                    js性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.6" data-path="6.html">
+            
+                <a href="6.html">
+            
+                    
+                    js代码优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.5.7" data-path="7.html">
+            
+                <a href="7.html">
+            
+                    
+                    js性能优化二
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >js性能优化二</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="js&#x4F18;&#x5316;2">js&#x4F18;&#x5316;2</h1>
+<p><code>&#x7531;&#x4E8E;jsperf&#x505C;&#x6B62;&#x7EF4;&#x62A4;, &#x56E0;&#x6B64;&#x91C7;&#x7528;JSBench(&#x4E0A;&#x4E00;&#x8282;&#x5F00;&#x5934;&#x5C31;&#x5199;&#x4E86;)</code></p>
+<p>&#x8981;&#x4E48;&#x7A7A;&#x95F4;&#x6362;&#x65F6;&#x95F4;</p>
+<p>&#x8981;&#x4E48;&#x65F6;&#x95F4;&#x8282;&#x7701;&#x66F4;&#x591A;&#x7684;&#x7A7A;&#x95F4;</p>
+<h2 id="&#x5806;&#x6808;&#x4E2D;&#x7684;js&#x6267;&#x884C;&#x8FC7;&#x7A0B;">&#x5806;&#x6808;&#x4E2D;&#x7684;js&#x6267;&#x884C;&#x8FC7;&#x7A0B;</h2>
+<p>&#x770B;&#x5982;&#x4E0B;&#x4E00;&#x6BB5;&#x4EE3;&#x7801;</p>
+<pre><code class="lang-javaScript"><span class="hljs-keyword">let</span> a = <span class="hljs-number">10</span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">b</span>) </span>{
+    <span class="hljs-keyword">let</span> a = <span class="hljs-number">2</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">baz</span>(<span class="hljs-params">c</span>) </span>{
+        <span class="hljs-built_in">console</span>.info(a + b + c);
+    }
+    <span class="hljs-keyword">return</span> baz;
+}
+
+<span class="hljs-keyword">let</span> fn = foo(<span class="hljs-number">2</span>);
+fn(<span class="hljs-number">3</span>);
+</code></pre>
+<p>&#x5982;&#x4E0A;&#x9762;&#x51FD;&#x6570;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x63CF;&#x8FF0;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;:</p>
+<blockquote>
+<p>js&#x4EE3;&#x7801;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x540E;&#x9996;&#x5148;&#x4F1A;&#x5728;&#x5806;&#x5185;&#x5B58;&#x4E2D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#x73AF;&#x5883;&#x6808;(ECStack), &#x5185;&#x90E8;&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x4E0D;&#x540C;&#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;, &#x7136;&#x540E;&#x4EE3;&#x7801;&#x4ECE;&#x4E0A;&#x5F80;&#x4E0B;&#x6267;&#x884C;&#xFF0C;&#x6700;&#x5148;&#x521B;&#x5EFA;&#x7684;&#x662F;&#x5168;&#x5C40;&#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;(ECG), &#x5176;&#x4E2D;&#x58F0;&#x660E;&#x548C;&#x5B58;&#x653E;&#x4E86;&#x5168;&#x5C40;&#x4F5C;&#x7528;&#x57DF;&#x4E0B;&#x7684;&#x4EE3;&#x7801;</p>
+<p>&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x503C;&#x5C31;&#x662F;&#x76F4;&#x63A5;&#x5B58;&#x653E;&#x5728;&#x6808;&#x4E2D;(&#x7531;JS&#x4E3B;&#x7EBF;&#x7A0B;&#x7BA1;&#x7406;&#x91CA;&#x653E;), &#x5F15;&#x7528;&#x7C7B;&#x578B;&#x5C31;&#x5B58;&#x50A8;&#x5728;&#x5806;&#x4E2D;(gc&#x673A;&#x5236;&#x8FDB;&#x884C;&#x7BA1;&#x7406;)</p>
+<p>&#x6BCF;&#x5F53;&#x9047;&#x5230;&#x51FD;&#x6570;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x4F1A;&#x91CD;&#x65B0;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;, &#x5C31;&#x4F1A;&#x5165;&#x6808;, &#x5F53;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x540E;&#x7531;&#x662F;&#x5426;&#x4EA7;&#x751F;&#x95ED;&#x5305;&#x6765;&#x51B3;&#x5B9A;&#x8FD9;&#x4E2A;&#x6267;&#x884C;&#x6808;&#x662F;&#x5426;&#x9500;&#x6BC1;, &#x5982;&#x679C;&#x6709;&#x95ED;&#x5305;, &#x8FD9;&#x4E2A;&#x6267;&#x884C;&#x6808;&#x5C06;&#x76F4;&#x63A5;&#x5230;ECG&#x7684;&#x6700;&#x4E0B;&#x65B9;, &#x5982;&#x679C;&#x6CA1;&#x6709;&#x95ED;&#x5305;, &#x90A3;&#x4E48;ESP&#x6307;&#x9488;&#x4E0B;&#x79FB;, &#x6808;&#x9876;&#x7A7A;&#x95F4;&#x5C31;&#x91CA;&#x653E;&#x4E86;</p>
+<p>&#x5728;&#x8FD9;&#x91CC;&#x5C31;&#x662F;&#x9996;&#x5148;&#x5728;ECStack&#x4E2D;&#x521B;&#x5EFA;ECG, ECG&#x7684; VO&#x4E2D;&#x5B9A;&#x4E49;e&#xFF0C;foo&#x548C;fn</p>
+<p>&#x4F46;&#x662F;foo&#x662F;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x51FD;&#x6570;, &#x4E8E;&#x662F;&#x5C31;&#x5728;&#x5806;&#x4E2D;&#x5F00;&#x8F9F;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5185;&#x5B58;AB1&#x7528;&#x4E8E;&#x5B58;&#x653E;foo&#x51FD;&#x6570;, ECG&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;foo&#x6307;&#x9488;&#x6307;&#x5411;AB1&#x8FD9;&#x4E2A;&#x5806;, &#x5806;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;foo&#x51FD;&#x6570;&#x4EE5;&#x53CA;&#x4ED6;&#x7684;&#x540D;&#x5B57;&#x548C;&#x957F;&#x5EA6;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x662F;foo&#x6267;&#x884C;&#xFF0C;&#x5728;ECStack&#x4E2D;&#x5C31;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6808;, ESP&#x6307;&#x9488;&#x4E0A;&#x79FB;, &#x8FDB;&#x5165;&#x65B0;&#x7684;&#x6808;EC(foo)&#x4E2D;, &#x9996;&#x5148;&#x5B9A;&#x4E49;this&#x6B64;&#x5904;&#x6CA1;&#x6709;&#x7528;&#x5230;, &#x76F4;&#x63A5;&#x5C31;&#x662F;window</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x662F;&#x7EE7;&#x627F;&#x4E0A;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;&#x521B;&#x5EFA;&#x81EA;&#x5DF1;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x94FE;, foo&#x4E2D;&#x53EA;&#x6709;&#x4E24;&#x4E2A;&#x5C31;&#x662F;&#x4ED6;&#x81EA;&#x5DF1;&#x7684;foo.ao&#x4EE5;&#x53CA;&#x5168;&#x5C40;&#x7684;VO
+&#x7136;&#x540E;&#x5F00;&#x59CB;&#x8FDB;&#x5165;AO&#x4E2D;, &#x521B;&#x5EFA;arguments&#xFF0C;&#x83B7;&#x53D6;&#x5230;b = 2, a = 2, &#x5B9A;&#x4E49;baz</p>
+<p>&#x5F00;&#x8F9F;&#x65B0;&#x7684;&#x5806;AB2, &#x5806;&#x4E2D;&#x5B9A;&#x4E49;baz&#x51FD;&#x6570;, &#x540C;&#x65F6;&#x5728;EC(foo)&#x4E0B;&#x5C06;baz&#x6307;&#x5411;AB2</p>
+<p>&#x7136;&#x540E;&#x6267;&#x884C;foo&#x540E;&#x83B7;&#x53D6;&#x5230;EC(foo)&#x7684;&#x8FD4;&#x56DE;&#x503C;, &#x4E5F;&#x5C31;&#x662F;fn, &#x5C06;fn&#x6307;&#x5411;AB2</p>
+<p>&#x540C;&#x65F6;&#x5728;baz&#x51FD;&#x6570;&#x4E2D;&#x6709;&#x6765;&#x81EA;&#x5916;&#x90E8;foo&#x7684;&#x5F15;&#x7528;, &#x56E0;&#x6B64;&#x8FD9;&#x91CC;&#x5F62;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x95ED;&#x5305;foo, &#x6240;&#x4EE5;EC(foo)&#x5C06;&#x6C89;&#x5165;&#x6808;&#x5E95;, ESP&#x6307;&#x9488;&#x4E0A;&#x79FB;, &#x6267;&#x884C;fn&#x51FD;&#x6570;&#x5C31;&#x4F1A;&#x6267;&#x884C;baz&#x51FD;&#x6570;, &#x5F00;&#x8F9F;EC(baz)&#x548C;&#x4E0A;&#x8FF0;foo&#x8FC7;&#x7A0B;&#x4E00;&#x6837;</p>
+<p>&#x5F53;baz&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x540E;, ESP&#x6307;&#x9488;&#x4E0B;&#x79FB;, &#x6808;&#x9876;&#x7A7A;&#x95F4;&#x56DE;&#x6536;, &#x6700;&#x7EC8;&#x6E05;&#x7A7A;&#x6574;&#x4E2A;ECStack, &#x800C;&#x5806;&#x4E2D;&#x7A7A;&#x95F4;&#x7684;&#x56DE;&#x6536;&#x4EA4;&#x7ED9;gc&#x53BB;&#x5B8C;&#x6210;</p>
+</blockquote>
+<p><img src="image/5501619342545_.pic_hd.jpg" alt="&#x6267;&#x884C;&#x8FC7;&#x7A0B;"></p>
+<h2 id="&#x51CF;&#x5C11;&#x5224;&#x65AD;&#x5C42;&#x7EA7;">&#x51CF;&#x5C11;&#x5224;&#x65AD;&#x5C42;&#x7EA7;</h2>
+<p>&#x5177;&#x4F53;&#x6765;&#x8BF4;&#x5C31;&#x662F;&#x5728;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x51FA;&#x73B0;if else&#x591A;&#x5C42;&#x5D4C;&#x5957;&#x7684;&#x95EE;&#x9898;&#x5BFC;&#x81F4;&#x6027;&#x80FD;&#x53D8;&#x5DEE;, &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x63D0;&#x524D;return&#x6389;&#x65E0;&#x6548;&#x7684;&#x5224;&#x65AD;&#x6761;&#x4EF6;&#x8FBE;&#x5230;&#x5D4C;&#x5957;&#x5C42;&#x7EA7;&#x7684;&#x4F18;&#x5316;&#x6548;&#x679C;</p>
+<p>&#x5982;&#x4E0B;&#x6240;&#x793A;:</p>
+<pre><code class="lang-javaScript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doSome</span>(<span class="hljs-params">part, chapter</span>) </span>{
+    <span class="hljs-keyword">const</span> parts = [<span class="hljs-string">&quot;ES2016&quot;</span>, <span class="hljs-string">&quot;&#x5DE5;&#x7A0B;&#x5316;&quot;</span>, <span class="hljs-string">&quot;Vue&quot;</span>, <span class="hljs-string">&quot;React&quot;</span>];
+    <span class="hljs-keyword">if</span> (part) {
+        <span class="hljs-keyword">if</span> (parts.includes(part)) {
+            <span class="hljs-built_in">console</span>.info(<span class="hljs-string">&quot;&#x662F;&#x8FD9;&#x6837;&quot;</span>);
+            <span class="hljs-keyword">if</span> (chapter &gt; <span class="hljs-number">5</span>) {
+                <span class="hljs-built_in">console</span>.info(<span class="hljs-string">&quot;&#x4E0D;&#x8981;&#x5929;&#x5929;&#x60F3;&#x7740;&#x767D;&#x5AD6;&quot;</span>);
+            }
+        }
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">console</span>.info(<span class="hljs-string">&quot;&#x8BF7;&#x786E;&#x8BA4;&#x6A21;&#x5757;&#x4FE1;&#x606F;&quot;</span>);
+    }
+}
+
+<span class="hljs-comment">// * &#x4F18;&#x5316;&#x540E;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doSome</span>(<span class="hljs-params">part, chapter</span>) </span>{
+    <span class="hljs-keyword">const</span> parts = [<span class="hljs-string">&quot;ES2016&quot;</span>, <span class="hljs-string">&quot;&#x5DE5;&#x7A0B;&#x5316;&quot;</span>, <span class="hljs-string">&quot;Vue&quot;</span>, <span class="hljs-string">&quot;React&quot;</span>];
+    <span class="hljs-keyword">if</span> (!part) {
+        <span class="hljs-built_in">console</span>.info(<span class="hljs-string">&quot;&#x8BF7;&#x786E;&#x8BA4;&#x6A21;&#x5757;&#x4FE1;&#x606F;&quot;</span>);
+        <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">if</span> (!parts.includes(part)) <span class="hljs-keyword">return</span>;
+    <span class="hljs-built_in">console</span>.info(<span class="hljs-string">&quot;&#x662F;&#x8FD9;&#x6837;&quot;</span>);
+    <span class="hljs-keyword">if</span> (chapter &gt; <span class="hljs-number">5</span>) {
+        <span class="hljs-built_in">console</span>.info(<span class="hljs-string">&quot;&#x4E0D;&#x8981;&#x5929;&#x5929;&#x60F3;&#x7740;&#x767D;&#x5AD6;&quot;</span>);
+    }
+}
+</code></pre>
+<p>&#x5728;JSBench&#x4E2D;&#x8DD1;&#x51FA;&#x6765;&#x7684;&#x7ED3;&#x679C;&#x5C31;&#x53D1;&#x73B0;, &#x4F18;&#x5316;&#x540E;&#x660E;&#x663E;&#x4F1A;&#x5FEB;&#x5F88;&#x591A;</p>
+<p>&#x5F53;&#x7136;, &#x5BF9;&#x4E8E;&#x786E;&#x5B9A;&#x503C;&#x5F97;&#x5224;&#x65AD;(&#x5168;&#x7B49;)&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;switch case, &#x8FD9;&#x6837;&#x7684;&#x4EE3;&#x7801;&#x6574;&#x6D01;&#x5E76;&#x6613;&#x4E8E;&#x7EF4;&#x62A4;(&#x5F53;&#x7136;, &#x5E76;&#x4E0D;&#x662F;&#x6613;&#x4E8E;&#x7EF4;&#x62A4;&#x6027;&#x80FD;&#x5C31;&#x4E00;&#x5B9A;&#x597D;)</p>
+<h2 id="&#x51CF;&#x5C11;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x67E5;&#x627E;&#x5C42;&#x7EA7;">&#x51CF;&#x5C11;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x67E5;&#x627E;&#x5C42;&#x7EA7;</h2>
+<p>&#x4E3B;&#x8981;&#x662F;&#x51CF;&#x5C11;&#x67E5;&#x627E;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x5C42;&#x7EA7;&#xFF0C;&#x5982;&#x679C;&#x5C31;&#x8FD1;&#x8C03;&#x7528;&#xFF0C;&#x5C31;&#x4F1A;&#x51CF;&#x5C11;&#x6811;&#x5F62;&#x7ED3;&#x6784;&#x7684;&#x67E5;&#x627E;&#xFF0C;&#x67E5;&#x627E;&#x6811;&#x5F62;&#x7ED3;&#x6784;&#x662F;&#x8F83;&#x6162;&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x5C42;&#x7EA7;&#x8D8A;&#x591A;&#x8D8A;&#x6162;&#xFF0C;&#x56E0;&#x6B64;&#x5C3D;&#x91CF;&#x5C11;&#x7528;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x3002;&#x4F46;&#x662F;&#x91C7;&#x7528;&#x5185;&#x90E8;&#x5B9A;&#x4E49;&#x7684;&#x65B9;&#x5F0F;, &#x4F1A;&#x589E;&#x5927;&#x5185;&#x5B58;&#x7684;&#x6D88;&#x8017;&#xFF0C;&#x56E0;&#x6B64;&#x6700;&#x597D;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x4F20;&#x53C2;(&#x5DEE;&#x8DDD;&#x6781;&#x5C0F;, &#x4F46;&#x662F;&#x8FD9;&#x6837;&#x5185;&#x5B58;&#x5F00;&#x9500;&#x4E5F;&#x8282;&#x7701;&#x4E86;)&#x3002;</p>
+<p>&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;</p>
+<p><img src="image/5601619364629_.pic_hd.jpg" alt="&#x4F20;&#x53C2;"></p>
+<h2 id="&#x51CF;&#x5C11;&#x6570;&#x636E;&#x8BFB;&#x53D6;&#x6B21;&#x6570;">&#x51CF;&#x5C11;&#x6570;&#x636E;&#x8BFB;&#x53D6;&#x6B21;&#x6570;</h2>
+<p>js&#x4E2D;&#x7ECF;&#x5E38;&#x4F7F;&#x7528;&#x7684;&#x6570;&#x636E;&#x5206;&#x4E3A;&#x5B57;&#x9762;&#x91CF;, &#x5C40;&#x90E8;&#x7684;&#x53D8;&#x91CF;&#x3001;&#x6570;&#x7EC4;&#x5143;&#x7D20;&#x548C;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x8FD9;&#x56DB;&#x79CD;(&#x6700;&#x5E38;&#x89C1;), &#x5BF9;&#x4E8E;&#x8FD9;&#x56DB;&#x79CD;, &#x8BBF;&#x95EE;&#x5B57;&#x9762;&#x91CF;&#x548C;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x6700;&#x5FEB;&#xFF0C;&#x56E0;&#x4E3A;&#x4ED6;&#x4EEC;&#x90FD;&#x5B58;&#x50A8;&#x5728;&#x6808;&#x533A;&#x4E2D;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x8C61;&#x548C;&#x6570;&#x7EC4;&#x7684;&#x7B49;&#x5B58;&#x5728;&#x539F;&#x578B;&#x94FE;&#x67E5;&#x627E;&#xFF0C;&#x56E0;&#x6B64;&#x5C31;&#x7A0D;&#x5FAE;&#x4F1A;&#x6162;&#x4E00;&#x70B9;, &#x5C31;&#x50CF;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x4E00;&#x6837;&#x3002;</p>
+<pre><code class="lang-HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;skip&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;skip&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+        <span class="hljs-keyword">let</span> box = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;skip&quot;</span>);
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hasEle</span> (<span class="hljs-params">ele, cls</span>) </span>{
+            <span class="hljs-comment">// return ele.className === cls;</span>
+            <span class="hljs-comment">// &#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#x5982;&#x679C;&#x53EA;&#x4F7F;&#x7528;&#x4E00;&#x6B21;, &#x786E;&#x5B9E;&#x6CA1;&#x6709;&#x592A;&#x5927;&#x7684;&#x95EE;&#x9898;, &#x4F46;&#x662F;&#x5982;&#x679C;&#x591A;&#x6B21;&#x91CD;&#x590D;&#x4F7F;&#x7528;, &#x5C31;&#x4F1A;&#x5BFC;&#x81F4;&#x591A;&#x6B21;&#x53BB;ele&#x4E2D;&#x67E5;&#x627E;&#x5C5E;&#x6027;, &#x5BFC;&#x81F4;&#x67E5;&#x627E;&#x8FD9;&#x4E00;&#x6B65;&#x7684;&#x6027;&#x80FD;&#x6D6A;&#x8D39;, &#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x5B83;&#x5B58;&#x50A8;&#x8D77;&#x6765;, &#x4EE5;&#x4F18;&#x5316;&#x6267;&#x884C;&#x6548;&#x7387;&#x3002;&#x5F53;&#x7136;&#x8FD9;&#x6837;&#x7684;&#x4F18;&#x5316;&#x4E5F;&#x9020;&#x6210;&#x4E86;&#x5185;&#x5B58;&#x6D88;&#x8017;, &#x4E0D;&#x8FC7;&#x5982;&#x679C;&#x662F;&#x5927;&#x89C4;&#x6A21;&#x7684;&#x8BBF;&#x95EE;, &#x8FD8;&#x662F;&#x503C;&#x5F97;, &#x6BD4;&#x5982;react&#x4E2D;&#x5BF9;props&#x7684;&#x89E3;&#x6784;&#x8D4B;&#x503C;, vue&#x4E2D;&#x4F18;&#x5316;computed&#x5C5E;&#x6027;&#x65F6;&#x53EF;&#x4EE5;&#x5BF9;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x89E3;&#x6784;(&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;this)</span>
+            <span class="hljs-keyword">let</span> className = ele.className;
+            <span class="hljs-keyword">return</span> className === cls;
+        }
+        hasEle(box, <span class="hljs-string">&quot;skip&quot;</span>);
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</code></pre>
+<h2 id="&#x5B57;&#x9762;&#x91CF;&#x548C;&#x6784;&#x9020;&#x5F0F;">&#x5B57;&#x9762;&#x91CF;&#x548C;&#x6784;&#x9020;&#x5F0F;</h2>
+<p>&#x6D4B;&#x8BD5;&#x5B57;&#x9762;&#x91CF;&#x548C;&#x6784;&#x9020;&#x5F0F;&#x7684;&#x6267;&#x884C;&#x6548;&#x7387;</p>
+<pre><code class="lang-javaScript"><span class="hljs-keyword">let</span> test = () =&gt; {
+    <span class="hljs-keyword">let</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>();
+    obj.name = <span class="hljs-string">&quot;zs&quot;</span>;
+    obj.age = <span class="hljs-number">28</span>;
+    obj.slogan = <span class="hljs-string">&quot;&#x6211;&#x7684;&#x4F7F;&#x547D;&quot;</span>;
+    <span class="hljs-keyword">return</span> obj;
+}
+
+<span class="hljs-comment">// * &#x65B9;&#x5F0F;&#x4E8C;</span>
+<span class="hljs-keyword">let</span> test = () =&gt; {
+    <span class="hljs-keyword">let</span> obj = {};
+    obj.name = <span class="hljs-string">&quot;zs&quot;</span>;
+    obj.age = <span class="hljs-number">28</span>;
+    obj.slogan = <span class="hljs-string">&quot;&#x6211;&#x7684;&#x4F7F;&#x547D;&quot;</span>;
+    <span class="hljs-keyword">return</span> obj
+}
+</code></pre>
+<p>&#x5F53;&#x7136;&#x6D4B;&#x8BD5;&#x7ED3;&#x679C;&#x4E5F;&#x662F;&#x610F;&#x6599;&#x4E4B;&#x4E2D;, &#x4F7F;&#x7528;&#x5B57;&#x9762;&#x91CF;&#x4F1A;&#x5FEB;&#x5F88;&#x591A;, &#x56E0;&#x4E3A;new&#x5173;&#x952E;&#x5B57;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x65F6;&#x5019;, &#x8981;&#x6267;&#x884C;Objet&#x7684;&#x6784;&#x9020;&#x4F53;&#x5E76;&#x4E14;&#x8981;&#x6539;&#x53D8;&#x5185;&#x90E8;this&#x6307;&#x5411;, &#x9700;&#x8981;&#x4E00;&#x5B9A;&#x7684;&#x65F6;&#x95F4;, &#x56E0;&#x6B64;&#x4F7F;&#x7528;new&#x5173;&#x952E;&#x5B57;&#x4F1A;&#x6162;&#x5F88;&#x591A;&#x3002;&#x5F53;&#x7136;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x5DEE;&#x8DDD;&#x5E76;&#x4E0D;&#x5927;, &#x5982;&#x679C;&#x662F;&#x57FA;&#x7840;&#x7C7B;&#x578B;, &#x90A3;&#x5C31;&#x771F;&#x7684;&#x662F;&#x5929;&#x5DEE;&#x5730;&#x522B;&#x4E86;, &#x5E76;&#x4E14;&#x4E00;&#x4E2A;&#x662F;&#x539F;&#x59CB;&#x7C7B;&#x578B;&#x4E00;&#x4E2A;&#x662F;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#x57FA;&#x7840;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;, &#x67E5;&#x627E;&#x539F;&#x578B;&#x65B9;&#x6CD5;&#x65F6;, &#x5B9E;&#x9645;&#x4E0A;&#x5185;&#x90E8;&#x505A;&#x4E86;&#x4E00;&#x6B21;&#x8F6C;&#x6362;, &#x5148;&#x8F6C;&#x6362;&#x4E3A;&#x5F15;&#x7528;&#x7C7B;&#x578B;, &#x5728;&#x8C03;&#x7528;&#x539F;&#x578B;&#x94FE;&#x4E0A;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x4F46;&#x662F;&#x5B57;&#x9762;&#x59CB;&#x7EC8;&#x6765;&#x8BF4;&#x89E3;&#x7EA6;&#x4E86;&#x7A7A;&#x95F4;, &#x4E5F;&#x89E3;&#x7EA6;&#x4E86;&#x65F6;&#x95F4;</p>
+<h2 id="&#x51CF;&#x5C11;&#x5FAA;&#x574F;&#x4F53;&#x4E2D;&#x6D3B;&#x52A8;">&#x51CF;&#x5C11;&#x5FAA;&#x574F;&#x4F53;&#x4E2D;&#x6D3B;&#x52A8;</h2>
+<p>&#x7B80;&#x5355;&#x7684;&#x8BF4;&#x5C31;&#x662F;&#x5C06;&#x5FAA;&#x73AF;&#x4F53;&#x4E2D;&#x4E0D;&#x662F;&#x6BCF;&#x6B21;&#x90FD;&#x6539;&#x53D8;&#x7684;&#x4E1A;&#x52A1;&#x62BD;&#x79BB;&#x5230;&#x5FAA;&#x73AF;&#x4F53;&#x7684;&#x5916;&#x9762;&#x53BB;&#x5B8C;&#x6210;, &#x6BD5;&#x7ADF;&#x5FAA;&#x73AF;&#x672C;&#x8EAB;&#x5C31;&#x8017;&#x8D44;&#x6E90;&#x4E86;, &#x4E0D;&#x505A;&#x66F4;&#x6539;&#x8FD8;&#x6BCF;&#x6B21;&#x90FD;&#x6267;&#x884C;&#x5C31;&#x662F;&#x7EAF;&#x7CB9;&#x5BF9;&#x8D44;&#x6E90;&#x7684;&#x4E00;&#x79CD;&#x6D6A;&#x8D39;&#x4E86;&#x3002;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x6240;&#x793A;:</p>
+<pre><code class="lang-javaScript"><span class="hljs-keyword">let</span> test = () =&gt; {
+    <span class="hljs-keyword">let</span> arr = [<span class="hljs-string">&apos;zce&apos;</span>, <span class="hljs-number">38</span>, <span class="hljs-string">&apos;&#x6211;&#x7684;&#x4F7F;&#x547D;&apos;</span>];
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; arr.length; i++) {
+        <span class="hljs-built_in">console</span>.info(arr[i])
+    }
+}
+
+<span class="hljs-comment">// &#x7531;&#x4E8E;&#x5FAA;&#x73AF;&#x4F53;&#x4E2D;&#x5E76;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x64CD;&#x4F5C;, &#x56E0;&#x6B64;&#x8FD9;&#x91CC;&#x505A;&#x7684;&#x5B9E;&#x9645;&#x4E0A;&#x5C31;&#x662F;&#x4E4B;&#x524D;&#x4F18;&#x5316;for&#x5FAA;&#x73AF;&#x4E00;&#x6837;&#x7684;&#x601D;&#x8DEF;, &#x5C06;&#x6BCF;&#x6B21;&#x90FD;&#x6267;&#x884C;&#x7684;arr.length&#x62FF;&#x5230;&#x5916;&#x9762;&#x53BB;,&#x7F13;&#x5B58;&#x8D77;&#x6765;, &#x53EA;&#x53D6;&#x4E00;&#x6B21;</span>
+
+<span class="hljs-keyword">let</span> test = () =&gt; {
+    <span class="hljs-keyword">let</span> arr = [<span class="hljs-string">&apos;zce&apos;</span>, <span class="hljs-number">38</span>, <span class="hljs-string">&apos;&#x6211;&#x7684;&#x4F7F;&#x547D;&apos;</span>];
+    <span class="hljs-keyword">let</span> len = arr.length;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; len; i++) {
+        <span class="hljs-built_in">console</span>.info(arr[i])
+    }
+}
+
+
+<span class="hljs-comment">// &#x8FD9;&#x6837;&#x64CD;&#x4F5C;&#x4E4B;&#x540E;, &#x6267;&#x884C;&#x6548;&#x7387;&#x5927;&#x5927;&#x63D0;&#x9AD8;&#x4E86;</span>
+
+<span class="hljs-comment">// &#x5F53;&#x7136;, &#x4F7F;&#x7528;while&#x4F1A;&#x66F4;&#x5FEB;, &#x56E0;&#x4E3A;&#x64CD;&#x4F5C;&#x66F4;&#x5C11;(&#x5F53;&#x7136;&#x8981;&#x4ECE;&#x540E;&#x5F80;&#x524D;&#x904D;&#x5386;), &#x6BD5;&#x7ADF;for&#x5FAA;&#x73AF;&#x4E0D;&#x53EF;&#x907F;&#x514D;&#x7684;&#x6BCF;&#x4E00;&#x6B21;&#x90FD;&#x8981;&#x53BB;&#x91CD;&#x65B0;&#x7ED9;i&#x8D4B;&#x503C;, &#x5E76;&#x4E14;&#x8981;&#x6BD4;&#x8F83;</span>
+
+<span class="hljs-keyword">let</span> test = () =&gt; {
+    <span class="hljs-keyword">let</span> arr = [<span class="hljs-string">&apos;zce&apos;</span>, <span class="hljs-number">38</span>, <span class="hljs-string">&apos;&#x6211;&#x7684;&#x4F7F;&#x547D;&apos;</span>];
+    <span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">let</span> len = arr.length;
+    <span class="hljs-keyword">while</span>(len--) {
+        <span class="hljs-built_in">console</span>.info(arr[len]);
+    }
+}
+</code></pre>
+<h2 id="&#x51CF;&#x5C11;&#x58F0;&#x660E;&#x4EE5;&#x53CA;&#x8BED;&#x53E5;&#x6570;">&#x51CF;&#x5C11;&#x58F0;&#x660E;&#x4EE5;&#x53CA;&#x8BED;&#x53E5;&#x6570;</h2>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#x5C31;&#x662F;&#x4E4B;&#x524D;<code>&#x51CF;&#x5C11;&#x6570;&#x636E;&#x8BFB;&#x53D6;&#x6B21;&#x6570;</code>&#x76F8;&#x53CD;&#x7684;&#x4E00;&#x79CD;&#x6982;&#x5FF5;, &#x4ED6;&#x4EEC;&#x4E2D;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5BFB;&#x627E;&#x4E00;&#x4E2A;&#x5947;&#x70B9;, &#x90A3;&#x5C31;&#x662F;&#x8FD9;&#x4E2A;&#x503C;&#x4F7F;&#x7528;&#x591A;&#x4E0D;&#x591A;, &#x5982;&#x679C;&#x8BF4;&#x53EA;&#x6709;&#x4E00;&#x4E24;&#x6B21;, &#x800C;&#x4E0D;&#x662F;&#x5341;&#x51E0;&#x6B21;&#x4E0A;&#x767E;&#x6B21;&#x7684;&#x590D;&#x7528;, &#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x51CF;&#x5C11;&#x58F0;&#x660E;&#x4EE5;&#x53CA;&#x8BED;&#x53E5;&#x6570;, &#x800C;&#x4E0D;&#x662F;&#x4E0D;&#x505C;&#x5730;&#x7F13;&#x5B58;&#x503C;&#x3002;</p>
+<p>&#x56E0;&#x4E3A;&#x6BCF;&#x4E00;&#x6B21;&#x5B9A;&#x4E49;, &#x89E3;&#x91CA;&#x5668;&#x90FD;&#x8981;&#x591A;&#x505A;&#x4E00;&#x53E5;&#x8BCD;&#x6CD5;&#x5206;&#x6790;&#x548C;&#x8BED;&#x6CD5;&#x5206;&#x6790;, &#x6784;&#x5EFA;AST&#x6811;&#x751F;&#x6210;&#x5B57;&#x8282;&#x7801;, &#x7136;&#x540E;&#x770B;&#x662F;&#x5426;&#x6709;&#x91CD;&#x590D;&#x51FA;&#x73B0;&#x7684;&#x5B57;&#x8282;&#x7801;&#x9700;&#x8981;&#x542F;&#x52A8;&#x7F16;&#x8BD1;&#x5668;&#x7F16;&#x8BD1;&#x6210;&#x673A;&#x5668;&#x7801;&#x5B58;&#x50A8;&#x8D77;&#x6765;&#x3002;&#x8FD9;&#x4E00;&#x6B65;&#x8FD8;&#x662F;&#x6BD4;&#x8F83;&#x957F;&#x7684;&#x3002;</p>
+<p>&#x540C;&#x65F6;&#x8FDE;&#x7EED;&#x5B9A;&#x4E49;, &#x6267;&#x884C;&#x6548;&#x7387;&#x4E5F;&#x4F1A;&#x63D0;&#x9AD8;, &#x56E0;&#x4E3A;&#x89E3;&#x91CA;&#x5668;&#x4E0D;&#x9700;&#x8981;&#x5927;&#x91CF;&#x7684;&#x5BF9;&#x5173;&#x952E;&#x5B57;&#x505A;&#x8BCD;&#x6CD5;&#x5206;&#x6790;&#x548C;&#x8BED;&#x6CD5;&#x5206;&#x6790;&#x3002;&#x4F46;&#x662F;&#x591A;&#x5C42;&#x9017;&#x53F7;&#x64CD;&#x4F5C;&#x7B26;, &#x5E76;&#x4E0D;&#x662F;&#x90A3;&#x4E48;&#x597D;&#x9605;&#x8BFB;&#x3002;&#x56E0;&#x6B64;&#x4E0D;&#x63A8;&#x8350;&#x8FDE;&#x7EED;&#x4F7F;&#x7528;&#x9017;&#x53F7;&#x64CD;&#x4F5C;&#x7B26;+&#x4E00;&#x4E2A;&#x5173;&#x952E;&#x5B57;&#x53BB;&#x521D;&#x59CB;&#x5316;&#x5B9A;&#x4E49;&#x6570;&#x636E;, &#x8FD9;&#x4E00;&#x4E0D;&#x597D;&#x9605;&#x8BFB;, &#x4E5F;&#x4E0D;&#x597D;&#x7EF4;&#x62A4;&#x3002;</p>
+<h2 id="&#x4E8B;&#x4EF6;&#x59D4;&#x6258;">&#x4E8B;&#x4EF6;&#x59D4;&#x6258;</h2>
+<p>&#x539F;&#x7406;&#x5C31;&#x662F;&#x539F;&#x672C;&#x59D4;&#x6258;&#x5728;&#x5B50;&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x4E8B;&#x4EF6;, &#x5C06;&#x4E8B;&#x4EF6;&#x653E;&#x5728;&#x7236;&#x8282;&#x70B9;&#x4E0A;, &#x501F;&#x7528;&#x4E8B;&#x4EF6;&#x5192;&#x6CE1;&#x673A;&#x5236;&#x6765;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#x3002;(React&#x4E2D;&#x5C31;&#x91C7;&#x7528;&#x4E86;&#x4E8B;&#x4EF6;&#x59D4;&#x6258;&#xFF0C;&#x5F53;&#x7136;&#x4ED6;&#x53EB;<code>&#x5408;&#x6210;&#x4E8B;&#x4EF6;</code>&#xFF0C;&#x5C31;&#x662F;&#x5C06;&#x6240;&#x6709;&#x7684;&#x4E8B;&#x4EF6;&#x90FD;&#x5408;&#x6210;&#x5230;&#x4E86;document&#x4E0A;(17&#x4E4B;&#x524D;, 17&#x4E4B;&#x540E;&#x662F;&#x6839;&#x8282;&#x70B9;&#x6302;&#x8F7D;&#x7684;&#x90A3;&#x4E2A;#app&#x4E0A;))</p>
+<pre><code class="lang-HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;ul&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>ZCE<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>18<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>&#x6211;&#x7684;&#x4F7F;&#x547D;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+        <span class="hljs-keyword">let</span> list = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">&quot;#ul li&quot;</span>);
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showText</span>(<span class="hljs-params">ev</span>) </span>{
+            <span class="hljs-built_in">console</span>.info(ev.target.innerHTML);
+        }
+        <span class="hljs-comment">// * &#x4F20;&#x7EDF;&#x65B9;&#x5F0F;, &#x6302;&#x8F7D;&#x5230;&#x6BCF;&#x4E00;&#x4E2A;li&#x4E0A;, &#x6781;&#x5176;&#x4E0D;&#x63A8;&#x8350;&#x4F7F;&#x7528;</span>
+        list.forEach(item =&gt; {
+            item.onClick = showText;
+        });
+
+        <span class="hljs-comment">// * &#x4E8B;&#x4EF6;&#x59D4;&#x6258;</span>
+        <span class="hljs-keyword">let</span> ul = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;#ul&quot;</span>);
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showText</span>(<span class="hljs-params">ev</span>) </span>{
+            <span class="hljs-keyword">if</span> (ev.target.nodeName === <span class="hljs-string">&apos;li&apos;</span>) {
+                <span class="hljs-built_in">console</span>.info(ev.target.innerHTML);
+            }
+        }
+        ul.addEventListener(<span class="hljs-string">&apos;click&apos;</span>, showText, <span class="hljs-literal">true</span>);
+
+        <span class="hljs-comment">// &#x8FD9;&#x6837;&#x7684;&#x65B9;&#x5F0F;&#x4E0D;&#x592A;&#x597D;&#x6D4B;&#x8BD5;, &#x4E0D;&#x8FC7;&#x539F;&#x7406;&#x4E0A;&#x5F88;&#x597D;&#x8BF4;, &#x5C31;&#x662F;&#x5927;&#x91CF;&#x7ED1;&#x5B9A;&#x5728;&#x5B50;&#x5143;&#x7D20;&#x4E0A;&#x4F1A;&#x589E;&#x5927;&#x7ED1;&#x5B9A;&#x6D88;&#x8017;, &#x6BD5;&#x7ADF;&#x6BCF;&#x4E00;&#x4E2A;DOM&#x4E0A;&#x9762;&#x5143;&#x7D20;&#x90FD;&#x7ED1;&#x5B9A;&#x4E86;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;, &#x6027;&#x80FD;&#x4E5F;&#x597D;&#x4E0D;&#x5230;&#x90A3;&#x91CC;&#x53BB;, &#x8FD9;&#x5C31;&#x4E8B;&#x4EF6;&#x59D4;&#x6258;</span>
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="6.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: js代码优化">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"js性能优化二","level":"1.5.5.7","depth":3,"previous":{"title":"js代码优化","level":"1.5.5.6","depth":3,"path":"part5/6.md","ref":"part5/6.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters"],"pluginsConfig":{"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"part5/7.md","mtime":"2021-04-25T16:21:50.953Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-25T16:23:05.764Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
