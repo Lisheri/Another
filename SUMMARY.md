@@ -45,3 +45,17 @@
     * [js性能](part5/5.md)
     * [js代码优化](part5/6.md)
     * [js性能优化二](part5/7.md)
+  * 前端工程化
+    * 工程化概述
+      * [工程化定义和表现](part6/first/1.md)
+      * [工程化和工具的区别](part6/first/2.md)
+      * [工程化和Node.js](part6/first/3.md)
+    * 脚手架工具概要
+      * [常用脚手架工具](part6/second/1.md)
+      * [Yeoman](part6/second/2.md)
+      * [自定义脚手架工具](part6/second/3.md)
+      * [Plot](part6/second/4.md)
+    * 自动化构建
+      * [入门](part6/third/1.md)
+      * [Grunt](part6/third/2.md)
+      * [Gulp](part6/third/3.md)
